@@ -25,21 +25,83 @@
             </section>
         </header>
     <!-- MAIN -->
+        
+
         <div class = "main">
             <section id="category_bar">
                 
             </section>
             <section id="thema_container">
                 <section id="selection_bar">
-
+                    <input type="checkbox" name="chk_info" value="학교 직거래" class = "check_element">카테고리 별 검색 화면이 나오도록하는 checkbox 
                 </section>
+
                 <section id="productlist_wrap">
-                    <div class="box">
+                    
+                    <script>
+                        class Product{
+                            constructor(p_name, p_id, p_price, seller, seller_score, category, image, hashtag){
+                                this.p_name = p_name;
+                                this.p_id = p_id;
+                                this.p_price = p_price;
+                                this.seller = seller;
+                                this.seller_score = seller_score;
+                                this.category = category;
+                                this.image = image;
+                                this.hashtag = hashtag;
+                            }                            
+                        }    
+
+                        // 카테고리 : 1(의류) 2(책) 3(전자기기) 4(쿠폰/기프티콘) 5(원룸)
+                        var product_list = new Array();                                                
+                        product_list[0] = new Product("다온아토 독일군 스니커즈 265", 0, "28000원", "동작구직거래왕0", 4.5, 1,"./image/product1.jpg","새상품");
+                        product_list[1] = new Product("탑10 롱패딩 사이즈 90", 1, "20000원", "동작구직거래왕1", 3.5, 1,"./image/product2.jpg","택배비 별도");
+                        product_list[2] = new Product("GSAT 책 팝니다", 2, "21000원", "동작구직거래왕2", 4.0, 2,"./image/product3.jpg","숭실대입구 직거래");
+                        product_list[3] = new Product("컴사 책 팝니다(로봇그림)", 3, "9000원", "동작구직거래왕3", 3.5, 2,"./image/product4.jpg","택배거래X");
+                        product_list[4] = new Product("애플팬슬 1세대 + 정품가죽케이스", 4, "70000원",  "동작구직거래왕4", 5.0, 3,"./image/product5.jpg","택배비포함");
+                        product_list[5] = new Product("아이폰 11 64기가 화이트 액정 교체받은 외관 s급 기기", 5, "600000원", "동작구직거래왕5", 4.5, 3,"./image/product6.jpg","학교근처직거래");
+                        product_list[6] = new Product("스벅 카페모카 기프티콘 팔아요", 6, "4000원", "동작구직거래왕6", 4.5, 4,"./image/product7.jpg","스벅");
+                        product_list[7] = new Product("스벅 디저트 세트 기프티콘 팔아요", 7, "11500원", "동작구직거래왕7", 4.5, 4,"./image/product8.jpg","스벅");
+                        product_list[8] = new Product("숭실대 도보 3분 원룸 사실분", 8, "420000원", "동작구직거래왕8", 4.5, 5,"./image/product9.jpg","반지하풀오셥관리비별도");
+                        product_list[9] = new Product("숭대 2번 출구 1분거리 원룸 양도합니다", 9, "420000원", "동작구직거래왕9", 4.5, 5,"./image/product10.jpg","보증금2000지상층풀옵션");
+                        
+                        for(var i=0; i < product_list.length; i++){
+                            document.write('<div class="box">');
+                            document.write('    <div class="product_image">');
+                            document.write('        <img src=');
+                            document.write(             product_list[i].image);
+                            document.write('        >');
+                            document.write("    </div>");
+                            document.write('    <div class="product_info">');
+                            document.write('        <span class="product_title">');
+                            document.write(             product_list[i].p_name);
+                            document.write('        </span>');
+                            document.write("    </div>");       
+                            document.write('    <div class="seller-info">');
+                            document.write('        <span class="seller-name">');
+                            document.write(             product_list[i].seller);
+                            document.write('        </span>');
+                            document.write('        <span class="seller-score">');
+                            document.write('           판매자 평점:');
+                            document.write(             product_list[i].seller_score);
+                            document.write('        </span>');
+                            document.write('    </div>');
+                            document.write('    <p class="product_price">');
+                            document.write(         product_list[i].p_price);
+                            document.write('    </p>');
+                            document.write('    <p class="product_hashtag">');
+                            document.write('        #');document.write(product_list[i].hashtag);
+                            document.write('    </p>');
+                            document.write('</div>');
+                        }
+                    </script>
+
+                    <!-- <div class="box">
                         <div class="product_image">
 
                         </div>
                         <div class="product_info">
-                            <span class="product_title">레고 볼트론 (잠실 롯데 레고스토어 구입) 박스ㅇ 조립ㅇ 설명서ㅇ</span>
+                            <span class="product_title">상품1</span>
                         </div>
                         <div class="seller-info">
                             <span class="seller-name">
@@ -56,270 +118,7 @@
                             #숭실대직거래
                         </p>
                     </div>
-                    <div class="box">
-                        <div class="product_image">
-
-                        </div>
-                        <div class="product_info">
-                            <span class="product_title">레고 볼트론 (잠실 롯데 레고스토어 구입) 박스ㅇ 조립ㅇ 설명서ㅇ</span>
-                        </div>
-                        <div class="seller-info">
-                            <span class="seller-name">
-                                동작구직거래왕123123
-                            </span>
-                            <span class="seller-score">
-                                판매자평점 : 4.5점
-                            </span>
-                        </div>
-                        <p class="product_price">
-                            1,0000원
-                        </p>
-                        <p class="product_hashtag">
-                            #숭실대직거래
-                        </p>
-                    </div>
-                    <div class="box">
-                        <div class="product_image">
-
-                        </div>
-                        <div class="product_info">
-                            <span class="product_title">레고 볼트론 (잠실 롯데 레고스토어 구입) 박스ㅇ 조립ㅇ 설명서ㅇ</span>
-                        </div>
-                        <div class="seller-info">
-                            <span class="seller-name">
-                                동작구직거래왕
-                            </span>
-                            <span class="seller-score">
-                                판매자평점 : 4.5점
-                            </span>
-                        </div>
-                        <p class="product_price">
-                            1,0000원
-                        </p>
-                        <p class="product_hashtag">
-                            #숭실대직거래
-                        </p>
-                    </div>
-                    <div class="box">
-                        <div class="product_image">
-
-                        </div>
-                        <div class="product_info">
-                            <span class="product_title">레고 볼트론 (잠실 롯데 레고스토어 구입) 박스ㅇ 조립ㅇ 설명서ㅇ</span>
-                        </div>
-                        <div class="seller-info">
-                            <span class="seller-name">
-                                동작구직거래왕
-                            </span>
-                            <span class="seller-score">
-                                판매자평점 : 4.5점
-                            </span>
-                        </div>
-                        <p class="product_price">
-                            1,0000원
-                        </p>
-                        <p class="product_hashtag">
-                            #숭실대직거래
-                        </p>
-                    </div>
-                    <div class="box">
-                        <div class="product_image">
-
-                        </div>
-                        <div class="product_info">
-                            <span class="product_title">레고 볼트론 (잠실 롯데 레고스토어 구입) 박스ㅇ 조립ㅇ 설명서ㅇ</span>
-                        </div>
-                        <div class="seller-info">
-                            <span class="seller-name">
-                                동작구직거래왕
-                            </span>
-                            <span class="seller-score">
-                                판매자평점 : 4.5점
-                            </span>
-                        </div>
-                        <p class="product_price">
-                            1,0000원
-                        </p>
-                        <p class="product_hashtag">
-                            #숭실대직거래
-                        </p>
-                    </div>
-                    <div class="box">
-                        <div class="product_image">
-
-                        </div>
-                        <div class="product_info">
-                            <span class="product_title">레고 볼트론 (잠실 롯데 레고스토어 구입) 박스ㅇ 조립ㅇ 설명서ㅇ</span>
-                        </div>
-                        <div class="seller-info">
-                            <span class="seller-name">
-                                동작구직거래왕
-                            </span>
-                            <span class="seller-score">
-                                판매자평점 : 4.5점
-                            </span>
-                        </div>
-                        <p class="product_price">
-                            1,0000원
-                        </p>
-                        <p class="product_hashtag">
-                            #숭실대직거래
-                        </p>
-                    </div>
-                    <div class="box">
-                        <div class="product_image">
-
-                        </div>
-                        <div class="product_info">
-                            <span class="product_title">레고 볼트론 (잠실 롯데 레고스토어 구입) 박스ㅇ 조립ㅇ 설명서ㅇ</span>
-                        </div>
-                        <div class="seller-info">
-                            <span class="seller-name">
-                                동작구직거래왕
-                            </span>
-                            <span class="seller-score">
-                                판매자평점 : 4.5점
-                            </span>
-                        </div>
-                        <p class="product_price">
-                            1,0000원
-                        </p>
-                        <p class="product_hashtag">
-                            #숭실대직거래
-                        </p>
-                    </div>
-                    <div class="box">
-                        <div class="product_image">
-
-                        </div>
-                        <div class="product_info">
-                            <span class="product_title">레고 볼트론 (잠실 롯데 레고스토어 구입) 박스ㅇ 조립ㅇ 설명서ㅇ</span>
-                        </div>
-                        <div class="seller-info">
-                            <span class="seller-name">
-                                동작구직거래왕
-                            </span>
-                            <span class="seller-score">
-                                판매자평점 : 4.5점
-                            </span>
-                        </div>
-                        <p class="product_price">
-                            1,0000원
-                        </p>
-                        <p class="product_hashtag">
-                            #숭실대직거래
-                        </p>
-                    </div>
-                    <div class="box">
-                        <div class="product_image">
-
-                        </div>
-                        <div class="product_info">
-                            <span class="product_title">레고 볼트론 (잠실 롯데 레고스토어 구입) 박스ㅇ 조립ㅇ 설명서ㅇ</span>
-                        </div>
-                        <div class="seller-info">
-                            <span class="seller-name">
-                                동작구직거래왕
-                            </span>
-                            <span class="seller-score">
-                                판매자평점 : 4.5점
-                            </span>
-                        </div>
-                        <p class="product_price">
-                            1,0000원
-                        </p>
-                        <p class="product_hashtag">
-                            #숭실대직거래
-                        </p>
-                    </div>
-                    <div class="box">
-                        <div class="product_image">
-
-                        </div>
-                        <div class="product_info">
-                            <span class="product_title">레고 볼트론 (잠실 롯데 레고스토어 구입) 박스ㅇ 조립ㅇ 설명서ㅇ</span>
-                        </div>
-                        <div class="seller-info">
-                            <span class="seller-name">
-                                동작구직거래왕
-                            </span>
-                            <span class="seller-score">
-                                판매자평점 : 4.5점
-                            </span>
-                        </div>
-                        <p class="product_price">
-                            1,0000원
-                        </p>
-                        <p class="product_hashtag">
-                            #숭실대직거래
-                        </p>
-                    </div>
-                    <div class="box">
-                        <div class="product_image">
-
-                        </div>
-                        <div class="product_info">
-                            <span class="product_title">레고 볼트론 (잠실 롯데 레고스토어 구입) 박스ㅇ 조립ㅇ 설명서ㅇ</span>
-                        </div>
-                        <div class="seller-info">
-                            <span class="seller-name">
-                                동작구직거래왕
-                            </span>
-                            <span class="seller-score">
-                                판매자평점 : 4.5점
-                            </span>
-                        </div>
-                        <p class="product_price">
-                            1,0000원
-                        </p>
-                        <p class="product_hashtag">
-                            #숭실대직거래
-                        </p>
-                    </div>
-                    <div class="box">
-                        <div class="product_image">
-
-                        </div>
-                        <div class="product_info">
-                            <span class="product_title">레고 볼트론 (잠실 롯데 레고스토어 구입) 박스ㅇ 조립ㅇ 설명서ㅇ</span>
-                        </div>
-                        <div class="seller-info">
-                            <span class="seller-name">
-                                동작구직거래왕
-                            </span>
-                            <span class="seller-score">
-                                판매자평점 : 4.5점
-                            </span>
-                        </div>
-                        <p class="product_price">
-                            1,0000원
-                        </p>
-                        <p class="product_hashtag">
-                            #숭실대직거래
-                        </p>
-                    </div>
-                    <div class="box">
-                        <div class="product_image">
-
-                        </div>
-                        <div class="product_info">
-                            <span class="product_title">레고 볼트론 (잠실 롯데 레고스토어 구입) 박스ㅇ 조립ㅇ 설명서ㅇ</span>
-                        </div>
-                        <div class="seller-info">
-                            <span class="seller-name">
-                                동작구직거래왕
-                            </span>
-                            <span class="seller-score">
-                                판매자평점 : 4.5점
-                            </span>
-                        </div>
-                        <p class="product_price">
-                            1,0000원
-                        </p>
-                        <p class="product_hashtag">
-                            #숭실대직거래
-                        </p>
-                    </div>
+                     -->
                 </section>
                 
             </section>
@@ -327,6 +126,7 @@
                 
             </section>
         </div>
+    
     <!-- FOOTER -->
     <footer>
         <p>&copy; SSU-M <br />
@@ -335,44 +135,3 @@
   </body>
   </div>
 </html>
-
-
-
-
-<!-- 
-
-
-<div class="article-info">
-    <div class="article-title-content">
-      <span class="article-title">레고 볼트론 (잠실 롯데 레고스토어 구입) 박스ㅇ 조립ㅇ 설명서ㅇ</span>
-      <span class="article-content">레고 21311 볼트론 판매합니다
-
-레고 정품이고  
-잠실 롯데 애비뉴엘 레고스토어에서 구입했습니다
-
-레고 박스, 설명서(총 6개) 전부 다 있고
-조립 후 장식장 안에 보관해서 상태 좋습니다
-
-설명서 6개로 나눠져 있어서 
-재조립 하실 수 있고,  
-인테리어용으로도 좋습니다
-크기 꽤 크고 (약 45~50cm) 
-조립 후 세워두면 멋있습니다
-
-신도림역 직거래 가능합니다
-평일 18:30~19:00 
-토욜 16:00~17:00</span>
-    </div>
-
-    <p class="article-region-name">
-      서울 구로구 신도림동
-    </p>
-    <p class="article-price ">
-      185,000원
-    </p>
-    <section class="article-sub-info">
-      <span class="article-watch">
-        <img class="watch-icon" alt="Watch count" src="https://d1unjqcospf8gs.cloudfront.net/assets/home/base/like-8111aa74d4b1045d7d5943a901896992574dd94c090cef92c26ae53e8da58260.svg"> 1
-      </span>
-    </section>
-  </div> -->
