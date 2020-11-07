@@ -5,6 +5,9 @@
     height: 100%;
     /* padding: 0px 0 50px; */
     border: 1px solid black;
+    /* font-family: 'Do Hyeon', 'sans-serif'; */
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-weight: 500;
 }
 
 /* head */
@@ -39,6 +42,8 @@
     /* max-height: 1500px; */
     border: 1px solid black;
     display: flex;
+    font-size: 20px;
+    
     
 }
 
@@ -67,11 +72,42 @@ img{
 #selection_bar{
     border: 1px solid black;
     width: 100%;
-    height: 150px;
+    height: 110px;
     margin-top: 0pt;
     background-color: white;
     align-content: center;
+    /* display: flex; */
+
+}
+
+.wrap_checkbox{
     display: flex;
+    /* border: 5px solid black; */
+    margin: auto;
+    /* margin-left: 20pt; */
+    padding-top: 14pt;
+    justify-content: center;
+    font-family: 'Do Hyeon', 'sans-serif';
+    font-size: 15pt;
+}
+
+.ok_button{
+    /* border: 5px solid black; */
+    align-items: center;
+}
+
+.button{
+    margin-left: 49%;
+    margin-top: 15pt;
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-size: 11pt;
+}
+
+.check_element{
+    /* margin-left: 30pt; */
+    /* margin: auto; */
+    padding: auto;
+    margin-left: 30pt;
 }
 
 #productlist_wrap{
@@ -91,9 +127,10 @@ img{
     width: 250px;
     /* margin-right: 40px; */
     margin-bottom: 40px;
-    margin-left: 23px;
+    margin-left: 70px;
     margin-right: 23px;
     /* border: 1px solid black; */
+    
 }
 
 .product_image{
@@ -106,14 +143,16 @@ img{
 
 .product_title{
     display: block;
-    font-weight: 600;
+    font-weight: 500;
     color: #212529;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 18px;
     margin-top: 10px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: 'Do Hyeon', 'sans-serif';
+    
 }
 
 .seller-info{
@@ -123,6 +162,7 @@ img{
     display: flex;
     padding-top: 5px;
     padding-bottom: 5px;
+    /* font-size: 20px; */
 }
 
 /* .seller-name{
@@ -150,17 +190,21 @@ img{
 }
 
 .product_price{
-    font-weight: 600;
-    color: #ff8a3d;
-    font-size: 15px;
+    font-weight: 500;
+    /* color: #ff8a3d; */
+    color: mediumturquoise;
+    ;
+    font-size: 20px;
     line-height: 18px;
     margin-top: 6px;
+    font-family: 'Do Hyeon', 'sans-serif';
+    
 }
 
 .product_hashtag{
-    font-weight: 600;
+    font-weight: 500;
     color:  #868e96;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 2px;
     margin-top: 1px;
 }

@@ -6,6 +6,8 @@
     <title>제품 리스트</title>
     <link href="http://fonts.googleapis.com/css?family=Roboto:400,100" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/productlist_grid.css">
     <link rel="stylesheet" href="css/productlist.css">
   </head>
@@ -29,11 +31,21 @@
 
         <div class = "main">
             <section id="category_bar">
-                
+               <!-- aas  -->
             </section>
             <section id="thema_container">
                 <section id="selection_bar">
-                    <input type="checkbox" name="chk_info" value="학교 직거래" class = "check_element">카테고리 별 검색 화면이 나오도록하는 checkbox 
+                    <div class = "wrap_checkbox">
+                        <input type="checkbox" name="chk_info" value="의류" class = "check_element">의류 
+                        <input type="checkbox" name="chk_info" value="책" class = "check_element">책 
+                        <input type="checkbox" name="chk_info" value="전자기기" class = "check_element">전자기기
+                        <input type="checkbox" name="chk_info" value="쿠폰/기프티콘" class = "check_element">쿠폰/기프티콘
+                        <input type="checkbox" name="chk_info" value="원룸" class = "check_element">원룸
+                        
+                    </div>
+                    <div class = "ok_button">
+                        <button class="button" onclick="window.open('https://www.naver.com')"><span>확인</span></button>
+                    </div>
                 </section>
 
                 <section id="productlist_wrap">
@@ -122,9 +134,9 @@
                 </section>
                 
             </section>
-            <section id="free_space_main">
+            <!-- <section id="free_space_main">
                 
-            </section>
+            </section> -->
         </div>
     
     <!-- FOOTER -->
