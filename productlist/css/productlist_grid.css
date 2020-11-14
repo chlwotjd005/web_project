@@ -96,7 +96,7 @@ img{
     align-items: center;
 }
 
-.button{
+.button_chk{
     margin-left: 49%;
     margin-top: 15pt;
     font-family: 'Nanum Gothic Coding', monospace;
@@ -107,7 +107,10 @@ img{
     /* margin-left: 30pt; */
     /* margin: auto; */
     padding: auto;
-    margin-left: 30pt;
+    margin-top: 5pt;
+    margin-right: 5pt;
+    margin-left: 50pt;
+    /* margin-top: 30pt; */
 }
 
 #productlist_wrap{
@@ -127,7 +130,7 @@ img{
     width: 250px;
     /* margin-right: 40px; */
     margin-bottom: 40px;
-    margin-left: 70px;
+    margin-left: 50px;
     margin-right: 23px;
     /* border: 1px solid black; */
     

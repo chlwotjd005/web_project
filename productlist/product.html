@@ -36,9 +36,8 @@
         product_list[7] = new Product("스벅 디저트 세트 기프티콘 팔아요", 7, "11500원", "동작구직거래왕7", 4.5, 4,"./image/product8.jpg","스벅");
         product_list[8] = new Product("숭실대 도보 3분 원룸 사실분", 8, "420000원", "동작구직거래왕8", 4.5, 5,"./image/product9.jpg","반지하풀오셥관리비별도");
         product_list[9] = new Product("숭대 2번 출구 1분거리 원룸 양도합니다", 9, "420000원", "동작구직거래왕9", 4.5, 5,"./image/product10.jpg","보증금2000지상층풀옵션");
-    </script>
-    <script>
-        function doOpenCheck(chk){
+    
+        function CheckOnlyOne(chk){
             var obj = document.getElementsByName("chck");
             for(var i=0; i<obj.length; i++){
                 if(obj[i] != chk){
@@ -73,11 +72,11 @@
                 <section id="selection_bar">
                     
                     <div class = "wrap_checkbox">
-                        <input type="checkbox" name="chck" value="clothing" onclick="doOpenCheck(this);" class = "check_element">의류 
-                        <input type="checkbox" name="chck" value="book" onclick="doOpenCheck(this);" class = "check_element">책 
-                        <input type="checkbox" name="chck" value="electronics" onclick="doOpenCheck(this);" class = "check_element">전자기기
-                        <input type="checkbox" name="chck" value="coupon" onclick="doOpenCheck(this);" class = "check_element">쿠폰/기프티콘
-                        <input type="checkbox" name="chck" value="oneroom" onclick="doOpenCheck(this);" class = "check_element">원룸
+                        <input type="checkbox" name="chck" value="clothing" onclick="CheckOnlyOne(this);" class = "check_element">의류 
+                        <input type="checkbox" name="chck" value="book" onclick="CheckOnlyOne(this);" class = "check_element">책 
+                        <input type="checkbox" name="chck" value="electronics" onclick="CheckOnlyOne(this);" class = "check_element">전자기기
+                        <input type="checkbox" name="chck" value="coupon" onclick="CheckOnlyOne(this);" class = "check_element">쿠폰/기프티콘
+                        <input type="checkbox" name="chck" value="oneroom" onclick="CheckOnlyOne(this);" class = "check_element">원룸
                         
                     </div>
                     <div class = "ok_button">
@@ -123,6 +122,9 @@
                                     else if($("input:checkbox[value=oneroom]").is(":checked") == true){
                                         alert('원룸으로 업데이트');
                                         location.reload();                                                
+                                    }
+                                    else{
+                                        alert('하나의 항목을 선택해야 합니다.');
                                     }       
                                 });
                             });
