@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 
     <!-- for productlist HC -->
@@ -17,14 +22,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../productlist/css/productlist_grid.css">
     <link rel="stylesheet" href="../productlist/css/productlist.css">
     <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
 
     <script>
       class Product{
-          constructor(p_name, p_id, p_price, seller, seller_score, category, image, hashtag){
+          constructor(p_name, p_id, p_price, seller, seller_score, category, image, product_page, hashtag){
               this.p_name = p_name;
               this.p_id = p_id;
               this.p_price = p_price;
@@ -32,21 +39,22 @@
               this.seller_score = seller_score;
               this.category = category;
               this.image = image;
+              this.product_page = product_page;
               this.hashtag = hashtag;
           }                            
       } 
       // 카테고리 : 1(의류) 2(책) 3(전자기기) 4(쿠폰/기프티콘) 5(원룸)
       var product_list = new Array();                                                
-      product_list[0] = new Product("다온아토 독일군 스니커즈 265", 0, "28000원", "동작구직거래왕0", 4.5, 1,"../productlist/image/product1.jpg","새상품");
-      product_list[1] = new Product("탑10 롱패딩 사이즈 90", 1, "20000원", "동작구직거래왕1", 3.5, 1,"../productlist/image/product2.jpg","택배비 별도");
-      product_list[2] = new Product("GSAT 책 팝니다", 2, "21000원", "동작구직거래왕2", 4.0, 2,"../productlist/image/product3.jpg","숭실대입구 직거래");
-      product_list[3] = new Product("컴사 책 팝니다(로봇그림)", 3, "9000원", "동작구직거래왕3", 3.5, 2,"../productlist/image/product4.jpg","택배거래X");
-      product_list[4] = new Product("애플팬슬 1세대 + 정품가죽케이스", 4, "70000원",  "동작구직거래왕4", 5.0, 3,"../productlist/image/product5.jpg","택배비포함");
-      product_list[5] = new Product("아이폰 11 64기가 화이트 액정 교체받은 외관 s급 기기", 5, "600000원", "동작구직거래왕5", 4.5, 3,"../productlist/image/product6.jpg","학교근처직거래");
-      product_list[6] = new Product("스벅 카페모카 기프티콘 팔아요", 6, "4000원", "동작구직거래왕6", 4.5, 4,"../productlist/image/product7.jpg","스벅");
-      product_list[7] = new Product("스벅 디저트 세트 기프티콘 팔아요", 7, "11500원", "동작구직거래왕7", 4.5, 4,"../productlist/image/product8.jpg","스벅");
-      product_list[8] = new Product("숭실대 도보 3분 원룸 사실분", 8, "420000원", "동작구직거래왕8", 4.5, 5,"../productlist/image/product9.jpg","반지하풀오셥관리비별도");
-      product_list[9] = new Product("숭대 2번 출구 1분거리 원룸 양도합니다", 9, "420000원", "동작구직거래왕9", 4.5, 5,"../productlist/image/product10.jpg","보증금2000지상층풀옵션");
+      product_list[0] = new Product("다온아토 독일군 스니커즈 265", 0, "28000원", "동작구직거래왕0", 4.5, 1,"../productlist/image/product1.jpg","#","새상품");
+      product_list[1] = new Product("탑10 롱패딩 사이즈 90", 1, "20000원", "동작구직거래왕1", 3.5, 1,"../productlist/image/product2.jpg","#","택배비 별도");
+      product_list[2] = new Product("GSAT 책 팝니다", 2, "21000원", "동작구직거래왕2", 4.0, 2,"../productlist/image/product3.jpg","#","숭실대입구 직거래");
+      product_list[3] = new Product("컴사 책 팝니다(로봇그림)", 3, "9000원", "동작구직거래왕3", 3.5, 2,"../productlist/image/product4.jpg","#","택배거래X");
+      product_list[4] = new Product("애플팬슬 1세대 + 정품가죽케이스", 4, "70000원",  "동작구직거래왕4", 5.0, 3,"../productlist/image/product5.jpg","#","택배비포함");
+      product_list[5] = new Product("아이폰 11 64기가 화이트 액정 교체받은 외관 s급 기기", 5, "600000원", "동작구직거래왕5", 4.5, 3,"../productlist/image/product6.jpg","#","학교근처직거래");
+      product_list[6] = new Product("스벅 카페모카 기프티콘 팔아요", 6, "4000원", "동작구직거래왕6", 4.5, 4,"../productlist/image/product7.jpg","#","스벅");
+      product_list[7] = new Product("스벅 디저트 세트 기프티콘 팔아요", 7, "11500원", "동작구직거래왕7", 4.5, 4,"../productlist/image/product8.jpg","#","스벅");
+      product_list[8] = new Product("숭실대 도보 3분 원룸 사실분", 8, "420000원", "동작구직거래왕8", 4.5, 5,"../productlist/image/product9.jpg","#","반지하풀오셥관리비별도");
+      product_list[9] = new Product("숭대 2번 출구 1분거리 원룸 양도합니다", 9, "420000원", "동작구직거래왕9", 4.5, 5,"../productlist/image/product10.jpg","#","보증금2000지상층풀옵션");
       // product_list[10] = new Product("다온아토 독일군 스니커즈 265", 0, "28000원", "동작구직거래왕0", 4.5, 1,"../productlist/image/product1.jpg","새상품");
       // product_list[11] = new Product("탑10 롱패딩 사이즈 90", 1, "20000원", "동작구직거래왕1", 3.5, 1,"../productlist/image/product2.jpg","택배비 별도");
       // product_list[12] = new Product("GSAT 책 팝니다", 2, "21000원", "동작구직거래왕2", 4.0, 2,"../productlist/image/product3.jpg","숭실대입구 직거래");
@@ -166,9 +174,9 @@
   <div class="j-hide-large" style="margin-top:83px"></div>
   
 
-  <!-- 본인이 만든 페이지 -->
   <!------------------------------------------------------------------------------------------------------------------------->
   <!-- productlist by HC -->
+  <!-- <div class ="jumbotron text-center"> -->
   <section id="thema_container">
     <section id="selection_bar">
         
@@ -199,10 +207,21 @@
                 });
             </script>
 
-            <button class="button_chk"><span>확인</span></button>
+            <!-- <button class="button_chk"><span>확인</span></button> -->
+            <!-- <div class="col-sm-3 text-center">
+              <button type="button" class="btn btn-primary">확인</button>
+            </div> -->
+            
+            <!-- 부트스트랩ver button -->
+            <div class="row text-center" style="width: 100%">
+              <div style="width: 30%; float:none; margin:0 auto" >
+                      <button class="btn btn-primary btn-round my-3">확인</button>
+              </div>
+            </div>
+            
             <script>
                 $(document).ready(function () {
-                    $('.button_chk').click(function () {
+                    $('.btn').click(function () {
                         var new_product = $('#productlist_wrap');
                         if($("input:checkbox[value=clothing]").is(":checked") == true){
                             alert('의류로 업데이트');        
@@ -244,9 +263,13 @@
                 document.write('        >');
                 document.write("    </div>");
                 document.write('    <div class="product_info">');
-                document.write('        <span class="product_title">');
-                document.write(             product_list[i].p_name);
-                document.write('        </span>');
+                document.write('        <a href=');
+                document.write(             product_list[i].product_page);
+                document.write('        >');
+                document.write('          <span class="product_title">');
+                document.write(               product_list[i].p_name);
+                document.write('          </span>');
+                document.write('        </a>');
                 document.write("    </div>");       
                 document.write('    <div class="seller-info">');
                 document.write('        <span class="seller-name">');
@@ -270,36 +293,12 @@
     </section>
     
   </section>
-  
+  <!-- </div> -->
   
   </div>
   <!-- Footer -->
-  <!-- <footer class="j-padding-64 j-light-grey j-small j-center"style="margin-top:200px" id="footer">
-    
-    <div class="j-row-padding">
-      <div class="j-col s4 ">
-        <h4>Store</h4>
-        <p><i class="fa fa-fw fa-map-marker"></i> Company Name</p>
-        <p><i class="fa fa-fw fa-phone"></i> 0044123123</p>
-        <p><i class="fa fa-fw fa-envelope"></i> ex@mail.com</p>
-      </div>
-      <div class="j-col s4 j-justify">
-        <h4>Payment method</h4>
-        <p><i class="fa fa-fw fa-cc-amex"></i> Amex</p>
-        <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
-        
-      </div>
-      <div class="j-col s4 j-justify">
-        <h4>Contect</h4>
-        <i class="fa fa-facebook-official j-hover-opacity j-large"></i>
-        <i class="fa fa-instagram j-hover-opacity j-large"></i>
-        <i class="fa fa-snapchat j-hover-opacity j-large"></i>
-        <i class="fa fa-pinterest-p j-hover-opacity j-large"></i>
-        <i class="fa fa-twitter j-hover-opacity j-large"></i>
-        <i class="fa fa-linkedin j-hover-opacity j-large"></i>
-      </div>
-    </div>
-  </footer> -->
+  
+  <!-- </footer>  -->
 
 
 
