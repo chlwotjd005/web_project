@@ -222,26 +222,62 @@
             <script>
                 $(document).ready(function () {
                     $('.btn').click(function () {
-                        var new_product = $('#productlist_wrap');
                         if($("input:checkbox[value=clothing]").is(":checked") == true){
-                            alert('의류로 업데이트');        
-                            location.reload();                                        
+                          var new_productlist = [];
+                          for(var i=0; i < product_list.length; i++){
+                            if(product_list[i].category == 1){
+                              new_productlist.push(product_list[i]);
+                            }
+                          }
+                          product_list = [];
+                          product_list = new_productlist;
+                          $("#productlist_wrap").load(window.location.herf + "#productlist_wrap");
+                          alert(product_list.length); 
+                                     
                         }
                         else if($("input:checkbox[value=book]").is(":checked") == true){
-                            alert('도서로 업데이트');
-                            location.reload();                                                
+                          var new_productlist = [];
+                          for(var i=0; i < product_list.length; i++){
+                            if(product_list[i].category == 2){
+                              new_productlist.push(product_list[i]);
+                            }
+                          }
+                          product_list = [];
+                          product_list = new_productlist;
+                          alert(product_list.length);                                                
                         }
                         else if($("input:checkbox[value=electronics]").is(":checked") == true){
-                            alert('전자기기로 업데이트');
-                            location.reload();                                                
+                          var new_productlist = [];
+                          for(var i=0; i < product_list.length; i++){
+                            if(product_list[i].category == 3){
+                              new_productlist.push(product_list[i]);
+                            }
+                          }
+                          product_list = [];
+                          product_list = new_productlist;
+                          alert(product_list.length);                                                
                         }
                         else if($("input:checkbox[value=coupon]").is(":checked") == true){
-                            alert('쿠폰/기프티콘으로 업데이트');
-                            location.reload();                                                
+                          var new_productlist = [];
+                          for(var i=0; i < product_list.length; i++){
+                            if(product_list[i].category == 4){
+                              new_productlist.push(product_list[i]);
+                            }
+                          }
+                          product_list = [];
+                          product_list = new_productlist;
+                          alert(product_list.length);                                               
                         }
                         else if($("input:checkbox[value=oneroom]").is(":checked") == true){
-                            alert('원룸으로 업데이트');
-                            location.reload();                                                
+                          var new_productlist = [];
+                          for(var i=0; i < product_list.length; i++){
+                            if(product_list[i].category == 5){
+                              new_productlist.push(product_list[i]);
+                            }
+                          }
+                          product_list = [];
+                          product_list = new_productlist;
+                          alert(product_list.length);                                                
                         }
                         else{
                             alert('하나의 항목을 선택해야 합니다.');
@@ -255,6 +291,9 @@
     <section id="productlist_wrap">
         
         <script>
+            // document.write('<h1>');
+            // document.write(   product_list.length);
+            // document.write('</h1>');
             for(var i=0; i < product_list.length; i++){
                 document.write('<div class="box">');
                 document.write('    <div class="product_image">');
