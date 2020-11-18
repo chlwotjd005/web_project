@@ -87,8 +87,8 @@ img{
     /* margin-left: 20pt; */
     padding-top: 14pt;
     justify-content: center;
-    font-family: 'Do Hyeon', 'sans-serif';
-    font-size: 15pt;
+    font-family: 'Noto Sans KR', 'sans-serif';
+    font-size: 13pt;
 }
 
 .ok_button{
@@ -148,13 +148,13 @@ img{
     display: block;
     font-weight: 500;
     color: #212529;
-    font-size: 20px;
+    font-size: 17px;
     line-height: 18px;
     margin-top: 10px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-family: 'Do Hyeon', 'sans-serif';
+    font-family: 'Noto Sans KR', 'sans-serif';
     
 }
 
