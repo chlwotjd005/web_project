@@ -4,16 +4,13 @@
     <title>제품 리스트</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/j.css">
+    <link rel="stylesheet" href="../css/j.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <!-- for productdetailpage -->
+    <link rel="stylesheet" href="../../productlist/css/productdetail.css">
 
 
     <!-- for productlist HC -->
@@ -22,16 +19,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="../productlist/css/productlist_grid.css">
-    <link rel="stylesheet" href="../productlist/css/productlist.css">
+    
+    <link rel="stylesheet" href="../../productlist/css/productlist_grid.css">
+    <link rel="stylesheet" href="../../productlist/css/productlist.css">
     <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
 
     <script>
       class Product{
-          constructor(p_name, p_id, p_price, seller, seller_score, category, image, product_page, hashtag){
+          constructor(p_name, p_id, p_price, seller, seller_score, category, image, hashtag){
               this.p_name = p_name;
               this.p_id = p_id;
               this.p_price = p_price;
@@ -39,22 +34,21 @@
               this.seller_score = seller_score;
               this.category = category;
               this.image = image;
-              this.product_page = product_page;
               this.hashtag = hashtag;
           }                            
       } 
       // 카테고리 : 1(의류) 2(책) 3(전자기기) 4(쿠폰/기프티콘) 5(원룸)
       var product_list = new Array();                                                
-      product_list[0] = new Product("다온아토 독일군 스니커즈 265", 0, "28000원", "동작구직거래왕0", 4.5, 1,"../productlist/image/product1.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product1.html","새상품");
-      product_list[1] = new Product("탑10 롱패딩 사이즈 90", 1, "20000원", "동작구직거래왕1", 3.5, 1,"../productlist/image/product2.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product2.html","택배비 별도");
-      product_list[2] = new Product("GSAT 책 팝니다", 2, "21000원", "동작구직거래왕2", 4.0, 2,"../productlist/image/product3.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product3.html","숭실대입구 직거래");
-      product_list[3] = new Product("컴사 책 팝니다(로봇그림)", 3, "9000원", "동작구직거래왕3", 3.5, 2,"../productlist/image/product4.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product4.html","택배거래X");
-      product_list[4] = new Product("애플팬슬 1세대 + 정품가죽케이스", 4, "70000원",  "동작구직거래왕4", 5.0, 3,"../productlist/image/product5.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product5.html","택배비포함");
-      product_list[5] = new Product("아이폰 11 64기가 화이트 액정 교체받은 외관 s급 기기", 5, "600000원", "동작구직거래왕5", 4.5, 3,"../productlist/image/product6.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product6.html","학교근처직거래");
-      product_list[6] = new Product("스벅 카페모카 기프티콘 팔아요", 6, "4000원", "동작구직거래왕6", 4.5, 4,"../productlist/image/product7.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product7.html","스벅");
-      product_list[7] = new Product("스벅 디저트 세트 기프티콘 팔아요", 7, "11500원", "동작구직거래왕7", 4.5, 4,"../productlist/image/product8.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product8.html","스벅");
-      product_list[8] = new Product("숭실대 도보 3분 원룸 사실분", 8, "420000원", "동작구직거래왕8", 4.5, 5,"../productlist/image/product9.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product9.html","반지하풀오셥관리비별도");
-      product_list[9] = new Product("숭대 2번 출구 1분거리 원룸 양도합니다", 9, "420000원", "동작구직거래왕9", 4.5, 5,"../productlist/image/product10.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product10.html","보증금2000지상층풀옵션");
+      product_list[0] = new Product("다온아토 독일군 스니커즈 265", 0, "28000원", "동작구직거래왕0", 4.5, 1,"../../productlist/image/product1.jpg","새상품");
+      product_list[1] = new Product("탑10 롱패딩 사이즈 90", 1, "20000원", "동작구직거래왕1", 3.5, 1,"../../productlist/image/product2.jpg","택배비 별도");
+      product_list[2] = new Product("GSAT 책 팝니다", 2, "21000원", "동작구직거래왕2", 4.0, 2,"../../productlist/image/product3.jpg","숭실대입구 직거래");
+      product_list[3] = new Product("컴사 책 팝니다(로봇그림)", 3, "9000원", "동작구직거래왕3", 3.5, 2,"../../productlist/image/product4.jpg","택배거래X");
+      product_list[4] = new Product("애플팬슬 1세대 + 정품가죽케이스", 4, "70000원",  "동작구직거래왕4", 5.0, 3,"../../productlist/image/product5.jpg","택배비포함");
+      product_list[5] = new Product("아이폰 11 64기가 화이트 액정 교체받은 외관 s급 기기", 5, "600000원", "동작구직거래왕5", 4.5, 3,"../../productlist/image/product6.jpg","학교근처직거래");
+      product_list[6] = new Product("스벅 카페모카 기프티콘 팔아요", 6, "4000원", "동작구직거래왕6", 4.5, 4,"../../productlist/image/product7.jpg","스벅");
+      product_list[7] = new Product("스벅 디저트 세트 기프티콘 팔아요", 7, "11500원", "동작구직거래왕7", 4.5, 4,"../../productlist/image/product8.jpg","스벅");
+      product_list[8] = new Product("숭실대 도보 3분 원룸 사실분", 8, "420000원", "동작구직거래왕8", 4.5, 5,"../../productlist/image/product9.jpg","반지하풀오셥관리비별도");
+      product_list[9] = new Product("숭대 2번 출구 1분거리 원룸 양도합니다", 9, "420000원", "동작구직거래왕9", 4.5, 5,"../../productlist/image/product10.jpg","보증금2000지상층풀옵션");
       // product_list[10] = new Product("다온아토 독일군 스니커즈 265", 0, "28000원", "동작구직거래왕0", 4.5, 1,"../productlist/image/product1.jpg","새상품");
       // product_list[11] = new Product("탑10 롱패딩 사이즈 90", 1, "20000원", "동작구직거래왕1", 3.5, 1,"../productlist/image/product2.jpg","택배비 별도");
       // product_list[12] = new Product("GSAT 책 팝니다", 2, "21000원", "동작구직거래왕2", 4.0, 2,"../productlist/image/product3.jpg","숭실대입구 직거래");
@@ -85,7 +79,7 @@
 
       <!-- Top header -->
         <header class="j-bar j-collapse j-top j-white j-large j-center" style="z-index:1;border-bottom:1px solid #ccc;width:90%;">
-            <a href="../../main/project.html"class="j-button j-margin-left j-left j-padding-32 js-margin-right"><b>SSU-MARKET</b></a>
+            <a href="../../../main/project.html"class="j-button j-margin-left j-left j-padding-32 js-margin-right"><b>SSU-MARKET</b></a>
             <input class="j-round-large j-bar-item j-input searchbar-border j-padding-16 j-margin-left j-margin-bottom j-margin-top"style="width:60%" type="text" placeholder="필요한 물품을 검색해보세요!" >
             <!-- <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" ><i class="fa fa-search j-hover-opacity j-large"></i></button>  -->
             <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" 
@@ -107,46 +101,46 @@
         <a onclick="Catefunc1()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate1">Clothes<i class="fa fa-caret-down"></i>
           </a>
           <div id="InnerCate1" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
-            <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">상의</a>
-            <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">하의</a>
-            <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">아우터</a>
-            <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">신발</a>
-            <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+            <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">상의</a>
+            <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">하의</a>
+            <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">아우터</a>
+            <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">신발</a>
+            <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
           </div>
      <!-- sidebar inner container -->
      <a onclick="Catefunc2()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate2">Books<i class="fa fa-caret-down"></i>
      </a>
      <div id="InnerCate2" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
-       <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">전공</a>
-       <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">소설</a>
-       <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">자기개발</a>
-       <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+       <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">전공</a>
+       <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">소설</a>
+       <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">자기개발</a>
+       <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
      </div>
     <!-- sidebar inner container -->
     <a onclick="Catefunc3()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate3">전자기기<i class="fa fa-caret-down"></i>
     </a>
     <div id="InnerCate3" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
-      <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">휴대폰</a>
-      <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">가전기기</a>
-      <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+      <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">휴대폰</a>
+      <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">가전기기</a>
+      <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
     </div>
     <!-- sidebar inner container -->
     <a onclick="Catefunc4()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate4">쿠폰/기프티콘<i class="fa fa-caret-down"></i>
     </a>
     <div id="InnerCate4" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
-      <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">음식</a>
-      <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">음료</a>
-      <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">전자기기</a>
-      <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">문화상품권</a>
+      <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">음식</a>
+      <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">음료</a>
+      <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">전자기기</a>
+      <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">문화상품권</a>
     </div>
     <!-- sidebar inner container -->
     <a onclick="Catefunc5()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate5">집<i class="fa fa-caret-down"></i>
     </a>
     <div id="InnerCate5" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
-      <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">원룸</a>
-      <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">투룸</a>
-      <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">하숙</a>
-      <a href="../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+      <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">원룸</a>
+      <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">투룸</a>
+      <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">하숙</a>
+      <a href="../../../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
     </div>
 
 
@@ -174,86 +168,46 @@
   <div class="j-hide-large" style="margin-top:83px"></div>
   
 
-  <!------------------------------------------------------------------------------------------------------------------------->
-  <!-- productlist by HC -->
-  <!-- <div class ="jumbotron text-center"> -->
+  <!-- 본인이 만든 페이지 -->
   <section id="thema_container">
     <section id="selection_bar">
-        
         <div class = "wrap_checkbox">
-            <input type="checkbox" name="chck" value="clothing" onclick="CheckOnlyOne(this);" class = "check_element">의류 
-            <input type="checkbox" name="chck" value="book" onclick="CheckOnlyOne(this);" class = "check_element">책 
-            <input type="checkbox" name="chck" value="electronics" onclick="CheckOnlyOne(this);" class = "check_element">전자기기
-            <input type="checkbox" name="chck" value="coupon" onclick="CheckOnlyOne(this);" class = "check_element">쿠폰/기프티콘
-            <input type="checkbox" name="chck" value="oneroom" onclick="CheckOnlyOne(this);" class = "check_element">원룸
-            
-        </div>
-        <div class = "ok_button">
-            <style>
-                .reverse {
-                    background: mediumturquoise;
-                    /* color: white; */
-                }
-            </style>
-
-            <script>
-                $(document).ready(function () {
-                    $('button').hover(function () {
-                        // $(this) => clik event가 발생한 h1 객체
-                        $(this).addClass('reverse');
-                    }, function () {
-                        $(this).removeClass('reverse');
-                    });
-                });
-            </script>
-
-            <!-- <button class="button_chk"><span>확인</span></button> -->
-            <!-- <div class="col-sm-3 text-center">
-              <button type="button" class="btn btn-primary">확인</button>
-            </div> -->
-            
-            <!-- 부트스트랩ver button -->
-            <div class="row text-center" style="width: 100%">
-              <div style="width: 30%; float:none; margin:0 auto" >
-                      <button class="btn btn-primary btn-round my-3">확인</button>
-              </div>
+          <div class="image">
+            <div id="product_image">
+              상품 이미지
             </div>
-            
-            <script>
-                $(document).ready(function () {
-                    $('.btn').click(function () {
-                        var new_product = $('#productlist_wrap');
-                        if($("input:checkbox[value=clothing]").is(":checked") == true){
-                            alert('의류로 업데이트');        
-                            location.reload();                                        
-                        }
-                        else if($("input:checkbox[value=book]").is(":checked") == true){
-                            alert('도서로 업데이트');
-                            location.reload();                                                
-                        }
-                        else if($("input:checkbox[value=electronics]").is(":checked") == true){
-                            alert('전자기기로 업데이트');
-                            location.reload();                                                
-                        }
-                        else if($("input:checkbox[value=coupon]").is(":checked") == true){
-                            alert('쿠폰/기프티콘으로 업데이트');
-                            location.reload();                                                
-                        }
-                        else if($("input:checkbox[value=oneroom]").is(":checked") == true){
-                            alert('원룸으로 업데이트');
-                            location.reload();                                                
-                        }
-                        else{
-                            alert('하나의 항목을 선택해야 합니다.');
-                        }       
-                    });
-                });
-            </script>
         </div>
+        <div class="contents">
+            <!-- revise by HC -->
+            <h3 id = "product_name">상품이름</h1>
+            
+            <p class="price" id="productprice"><b>상품가격</b></p>
+            <p><b id="sellername">판매자 닉네임</b></p>
+            <p id="sellerscore">신뢰도</p>
+
+            <p>상품설명</p>
+            
+            <button class="button">구매하기</button>
+        </div>
+
+        <!---------------------------------------------------------------------->
+        <!-- added by HC -->
+        <script>
+          document.getElementById('product_image').innerHTML="<img src='" + product_list[9].image + "''>";
+          document.getElementById('product_name').innerHTML=product_list[9].p_name;
+          document.getElementById('productprice').innerHTML=product_list[9].p_price;
+          document.getElementById('sellername').innerHTML=product_list[9].seller;
+          document.getElementById('sellerscore').innerHTML="판매자 평점: " + product_list[9].seller_score;
+          // document.getElementById('image_1').innerHTML="<img src=" + product_list[0].image + " />";
+        </script>
+        <!---------------------------------------------------------------------->
+        
+        </div>
+      
     </section>
 
     <section id="productlist_wrap">
-        
+        <h2>관련 상품</h2><br><br>
         <script>
             for(var i=0; i < product_list.length; i++){
                 document.write('<div class="box">');
@@ -263,13 +217,9 @@
                 document.write('        >');
                 document.write("    </div>");
                 document.write('    <div class="product_info">');
-                document.write('        <a href=');
-                document.write(             product_list[i].product_page);
-                document.write('        >');
-                document.write('          <span class="product_title">');
-                document.write(               product_list[i].p_name);
-                document.write('          </span>');
-                document.write('        </a>');
+                document.write('        <span class="product_title">');
+                document.write(             product_list[i].p_name);
+                document.write('        </span>');
                 document.write("    </div>");       
                 document.write('    <div class="seller-info">');
                 document.write('        <span class="seller-name">');
@@ -293,13 +243,35 @@
     </section>
     
   </section>
-  <!-- </div> -->
-  
-  </div>
-  <!-- Footer -->
-  
-  <!-- </footer>  -->
-
+ 
+  <!-- Footer
+  <!-- <footer class="j-padding-64 j-light-grey j-small j-center"style="margin-top:200px" id="footer">
+    
+    <div class="j-row-padding">
+      <div class="j-col s4 ">
+        <h4>Store</h4>
+        <p><i class="fa fa-fw fa-map-marker"></i> Company Name</p>
+        <p><i class="fa fa-fw fa-phone"></i> 0044123123</p>
+        <p><i class="fa fa-fw fa-envelope"></i> ex@mail.com</p>
+      </div>
+      <div class="j-col s4 j-justify">
+        <h4>Payment method</h4>
+        <p><i class="fa fa-fw fa-cc-amex"></i> Amex</p>
+        <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
+        
+      </div>
+      <div class="j-col s4 j-justify">
+        <h4>Contect</h4>
+        <i class="fa fa-facebook-official j-hover-opacity j-large"></i>
+        <i class="fa fa-instagram j-hover-opacity j-large"></i>
+        <i class="fa fa-snapchat j-hover-opacity j-large"></i>
+        <i class="fa fa-pinterest-p j-hover-opacity j-large"></i>
+        <i class="fa fa-twitter j-hover-opacity j-large"></i>
+        <i class="fa fa-linkedin j-hover-opacity j-large"></i>
+      </div>
+    </div>
+  </footer> -->
+ -->
 
 
   <!-- End page content -->

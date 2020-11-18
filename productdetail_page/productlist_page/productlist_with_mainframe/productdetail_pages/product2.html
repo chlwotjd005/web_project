@@ -173,15 +173,10 @@
     <section id="selection_bar">
         <div class = "wrap_checkbox">
           <div class="image">
-            <div id="slide">
-              <input type="radio" name="pos" id="pos1" checked>
-              <input type="radio" name="pos" id="pos2">
-              <ul>
-                  <li class="image1" id=image_1></li>
-                  <li class="image2" id=image_2></li>
-              </ul>
-            </div> 
-        </div>
+            <div id="product_image">
+              상품이미지
+            </div>
+          </div>
         <div class="contents">
             <!-- revise by HC -->
             <h3 id = "product_name">상품이름</h1>
@@ -198,10 +193,11 @@
         <!---------------------------------------------------------------------->
         <!-- added by HC -->
         <script>
+          document.getElementById('product_image').innerHTML="<img src='" + product_list[1].image + "''>";
           document.getElementById('product_name').innerHTML=product_list[1].p_name;
           document.getElementById('productprice').innerHTML=product_list[1].p_price;
           document.getElementById('sellername').innerHTML=product_list[1].seller;
-          document.getElementById('sellerscore').innerHTML=product_list[1].seller_score;
+          document.getElementById('sellerscore').innerHTML="판매자 평점: " + product_list[1].seller_score;
           // document.getElementById('image_1').innerHTML="<img src=" + product_list[0].image + " />";
         </script>
         <!---------------------------------------------------------------------->
