@@ -172,19 +172,10 @@
   <section id="thema_container">
     <section id="selection_bar">
         <div class = "wrap_checkbox">
-         
-            <!-- <div id="slide">
-              <input type="radio" name="pos" id="pos1" checked>
-              <input type="radio" name="pos" id="pos2">
-              <ul>
-                  <li class="image1" id=image_1></li>
-                  <li class="image2" id=image_2></li>
-              </ul>
-            </div>  -->
-            <div class="image">
-              <div id="product_image">
-                <!-- <img id="product_image"> -->
-              </div>
+          <div class="image">
+            <div id="product_image">
+              상품 이미지
+            </div>
         </div>
         <div class="contents">
             <!-- revise by HC -->
@@ -202,11 +193,11 @@
         <!---------------------------------------------------------------------->
         <!-- added by HC -->
         <script>
-          document.getElementById('product_image').innerHTML="<img src='" + product_list[0].image + "''>";
-          document.getElementById('product_name').innerHTML=product_list[0].p_name;
-          document.getElementById('productprice').innerHTML=product_list[0].p_price;
-          document.getElementById('sellername').innerHTML=product_list[0].seller;
-          document.getElementById('sellerscore').innerHTML="판매자 평점: " + product_list[0].seller_score;
+          document.getElementById('product_image').innerHTML="<img src='" + product_list[8].image + "''>";
+          document.getElementById('product_name').innerHTML=product_list[8].p_name;
+          document.getElementById('productprice').innerHTML=product_list[8].p_price;
+          document.getElementById('sellername').innerHTML=product_list[8].seller;
+          document.getElementById('sellerscore').innerHTML="판매자 평점: " + product_list[8].seller_score;
           // document.getElementById('image_1').innerHTML="<img src=" + product_list[0].image + " />";
         </script>
         <!---------------------------------------------------------------------->
