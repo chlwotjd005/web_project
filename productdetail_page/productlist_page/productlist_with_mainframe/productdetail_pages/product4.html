@@ -26,7 +26,7 @@
 
     <script>
       class Product{
-          constructor(p_name, p_id, p_price, seller, seller_score, category, image, hashtag){
+          constructor(p_name, p_id, p_price, seller, seller_score, category, image, product_page, hashtag){
               this.p_name = p_name;
               this.p_id = p_id;
               this.p_price = p_price;
@@ -34,21 +34,22 @@
               this.seller_score = seller_score;
               this.category = category;
               this.image = image;
+              this.product_page = product_page;
               this.hashtag = hashtag;
           }                            
       } 
       // 카테고리 : 1(의류) 2(책) 3(전자기기) 4(쿠폰/기프티콘) 5(원룸)
       var product_list = new Array();                                                
-      product_list[0] = new Product("다온아토 독일군 스니커즈 265", 0, "28000원", "동작구직거래왕0", 4.5, 1,"../../productlist/image/product1.jpg","새상품");
-      product_list[1] = new Product("탑10 롱패딩 사이즈 90", 1, "20000원", "동작구직거래왕1", 3.5, 1,"../../productlist/image/product2.jpg","택배비 별도");
-      product_list[2] = new Product("GSAT 책 팝니다", 2, "21000원", "동작구직거래왕2", 4.0, 2,"../../productlist/image/product3.jpg","숭실대입구 직거래");
-      product_list[3] = new Product("컴사 책 팝니다(로봇그림)", 3, "9000원", "동작구직거래왕3", 3.5, 2,"../../productlist/image/product4.jpg","택배거래X");
-      product_list[4] = new Product("애플팬슬 1세대 + 정품가죽케이스", 4, "70000원",  "동작구직거래왕4", 5.0, 3,"../../productlist/image/product5.jpg","택배비포함");
-      product_list[5] = new Product("아이폰 11 64기가 화이트 액정 교체받은 외관 s급 기기", 5, "600000원", "동작구직거래왕5", 4.5, 3,"../../productlist/image/product6.jpg","학교근처직거래");
-      product_list[6] = new Product("스벅 카페모카 기프티콘 팔아요", 6, "4000원", "동작구직거래왕6", 4.5, 4,"../../productlist/image/product7.jpg","스벅");
-      product_list[7] = new Product("스벅 디저트 세트 기프티콘 팔아요", 7, "11500원", "동작구직거래왕7", 4.5, 4,"../../productlist/image/product8.jpg","스벅");
-      product_list[8] = new Product("숭실대 도보 3분 원룸 사실분", 8, "420000원", "동작구직거래왕8", 4.5, 5,"../../productlist/image/product9.jpg","반지하풀오셥관리비별도");
-      product_list[9] = new Product("숭대 2번 출구 1분거리 원룸 양도합니다", 9, "420000원", "동작구직거래왕9", 4.5, 5,"../../productlist/image/product10.jpg","보증금2000지상층풀옵션");
+      product_list[0] = new Product("다온아토 독일군 스니커즈 265", 0, "28000원", "동작구직거래왕0", 4.5, 1,"../../productlist/image/product1.jpg","product1.html","새상품");
+      product_list[1] = new Product("탑10 롱패딩 사이즈 90", 1, "20000원", "동작구직거래왕1", 3.5, 1,"../../productlist/image/product2.jpg","product2.html","택배비 별도");
+      product_list[2] = new Product("GSAT 책 팝니다", 2, "21000원", "동작구직거래왕2", 4.0, 2,"../../productlist/image/product3.jpg","product3.html","숭실대입구 직거래");
+      product_list[3] = new Product("컴사 책 팝니다(로봇그림)", 3, "9000원", "동작구직거래왕3", 3.5, 2,"../../productlist/image/product4.jpg","product4.html","택배거래X");
+      product_list[4] = new Product("애플팬슬 1세대 + 정품가죽케이스", 4, "70000원",  "동작구직거래왕4", 5.0, 3,"../../productlist/image/product5.jpg","product5.html","택배비포함");
+      product_list[5] = new Product("아이폰 11 64기가 화이트 액정 교체받은 외관 s급 기기", 5, "600000원", "동작구직거래왕5", 4.5, 3,"../../productlist/image/product6.jpg","product6.html","학교근처직거래");
+      product_list[6] = new Product("스벅 카페모카 기프티콘 팔아요", 6, "4000원", "동작구직거래왕6", 4.5, 4,"../../productlist/image/product7.jpg","product7.html","스벅");
+      product_list[7] = new Product("스벅 디저트 세트 기프티콘 팔아요", 7, "11500원", "동작구직거래왕7", 4.5, 4,"../../productlist/image/product8.jpg","product8.html","스벅");
+      product_list[8] = new Product("숭실대 도보 3분 원룸 사실분", 8, "420000원", "동작구직거래왕8", 4.5, 5,"../../productlist/image/product9.jpg","product9.html","반지하풀오셥관리비별도");
+      product_list[9] = new Product("숭대 2번 출구 1분거리 원룸 양도합니다", 9, "420000원", "동작구직거래왕9", 4.5, 5,"../../productlist/image/product10.jpg","product10.html","보증금2000지상층풀옵션");
       // product_list[10] = new Product("다온아토 독일군 스니커즈 265", 0, "28000원", "동작구직거래왕0", 4.5, 1,"../productlist/image/product1.jpg","새상품");
       // product_list[11] = new Product("탑10 롱패딩 사이즈 90", 1, "20000원", "동작구직거래왕1", 3.5, 1,"../productlist/image/product2.jpg","택배비 별도");
       // product_list[12] = new Product("GSAT 책 팝니다", 2, "21000원", "동작구직거래왕2", 4.0, 2,"../productlist/image/product3.jpg","숭실대입구 직거래");
@@ -78,15 +79,15 @@
     <body class="j-content" style="max-width:1400px">
 
       <!-- Top header -->
-        <header class="j-bar j-collapse j-top j-white j-large j-center" style="z-index:1;border-bottom:1px solid #ccc;width:90%;">
-            <a href="../../../main/project.html"class="j-button j-margin-left j-left j-padding-32 js-margin-right"><b>SSU-MARKET</b></a>
-            <input class="j-round-large j-bar-item j-input searchbar-border j-padding-16 j-margin-left j-margin-bottom j-margin-top"style="width:60%" type="text" placeholder="필요한 물품을 검색해보세요!" >
-            <!-- <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" ><i class="fa fa-search j-hover-opacity j-large"></i></button>  -->
-            <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" 
-              onclick="location.href='../../../../productlist_page/productlist_with_mainframe/productlist_with_mainframe.html'"><i class="fa fa-search j-hover-opacity j-large"></i></button> 
-            <h4 class="j-round-large j-button j-margin-left j-left j-padding-16"><b>로그인</b> </h4>
-            <h4 class="j-round-large j-button j-margin-left j-left j-padding-16"><b>회원가입</b> </h4>
-          </header>
+      <header class="j-bar j-collapse j-top j-white j-large j-center" style="z-index:1;border-bottom:1px solid #ccc;width:90%;">
+        <a href="../../../../main/project.html"class="j-button j-margin-left j-left j-padding-32 js-margin-right"><b>SSU-MARKET</b></a>
+        <input class="j-round-large j-bar-item j-input searchbar-border j-padding-16 j-margin-left j-margin-bottom j-margin-top"style="width:60%" type="text" placeholder="필요한 물품을 검색해보세요!" >
+        <!-- <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" ><i class="fa fa-search j-hover-opacity j-large"></i></button>  -->
+        <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" 
+          onclick="location.href='../../../../productlist_page/productlist_with_mainframe/productlist_with_mainframe.html'"><i class="fa fa-search j-hover-opacity j-large"></i></button> 
+        <h4 class="j-round-large j-button j-margin-left j-left j-padding-16"><b>로그인</b> </h4>
+        <h4 class="j-round-large j-button j-margin-left j-left j-padding-16"><b>회원가입</b> </h4>
+      </header>
     <!-- Sidebar/menu -->
         
     <nav class="j-sidebar j-bar-block j-white j-collapse j-top" style="z-index:3;width:250px" id="mySidebar">
@@ -197,7 +198,7 @@
           document.getElementById('product_name').innerHTML=product_list[3].p_name;
           document.getElementById('productprice').innerHTML=product_list[3].p_price;
           document.getElementById('sellername').innerHTML=product_list[3].seller;
-          document.getElementById('sellerscore').innerHTML="판매자 평점: " + product_list[3].seller_score;
+          document.getElementById('sellerscore').innerHTML=product_list[3].seller_score;
           // document.getElementById('image_1').innerHTML="<img src=" + product_list[0].image + " />";
         </script>
         <!---------------------------------------------------------------------->
@@ -210,6 +211,7 @@
         <h2>관련 상품</h2><br><br>
         <script>
             for(var i=0; i < product_list.length; i++){
+              if(3!=i&&product_list[3].category==product_list[i].category){
                 document.write('<div class="box">');
                 document.write('    <div class="product_image">');
                 document.write('        <img src=');
@@ -217,9 +219,13 @@
                 document.write('        >');
                 document.write("    </div>");
                 document.write('    <div class="product_info">');
-                document.write('        <span class="product_title">');
-                document.write(             product_list[i].p_name);
-                document.write('        </span>');
+                document.write('        <a href=');
+                document.write(             product_list[i].product_page);
+                document.write('        >');
+                document.write('          <span class="product_title">');
+                document.write(               product_list[i].p_name);
+                document.write('          </span>');
+                document.write('        </a>');
                 document.write("    </div>");       
                 document.write('    <div class="seller-info">');
                 document.write('        <span class="seller-name">');
@@ -238,6 +244,7 @@
                 document.write('    </p>');
                 document.write('</div>');
             }
+          }
         </script>
 
     </section>
