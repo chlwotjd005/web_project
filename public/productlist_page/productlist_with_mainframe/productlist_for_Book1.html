@@ -43,29 +43,7 @@
               this.hashtag = hashtag;
           }                            
       } 
-      // 카테고리 : 1(의류) 2(책) 3(전자기기) 4(쿠폰/기프티콘) 5(원룸)
-      var product_list = new Array();                                                
-      //product_list[0] = new Product("다온아토 독일군 스니커즈 265", 0, "28000원", "동작구직거래왕0", 4.5, 1,"../productlist/image/product1.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product1.html","새상품");
-      product_list[0] = new Product("탑10 롱패딩 사이즈 90", 1, "20000원", "동작구직거래왕1", 3.5, 1,"../productlist/image/product2.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product2.html","택배비 별도");
-      //product_list[2] = new Product("GSAT 책 팝니다", 2, "21000원", "동작구직거래왕2", 4.0, 2,"../productlist/image/product3.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product3.html","숭실대입구 직거래");
-      //product_list[3] = new Product("컴사 책 팝니다(로봇그림)", 3, "9000원", "동작구직거래왕3", 3.5, 2,"../productlist/image/product4.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product4.html","택배거래X");
-      //product_list[4] = new Product("애플팬슬 1세대 + 정품가죽케이스", 4, "70000원",  "동작구직거래왕4", 5.0, 3,"../productlist/image/product5.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product5.html","택배비포함");
-      //product_list[5] = new Product("아이폰 11 64기가 화이트 액정 교체받은 외관 s급 기기", 5, "600000원", "동작구직거래왕5", 4.5, 3,"../productlist/image/product6.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product6.html","학교근처직거래");
-      //product_list[6] = new Product("스벅 카페모카 기프티콘 팔아요", 6, "4000원", "동작구직거래왕6", 4.5, 4,"../productlist/image/product7.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product7.html","스벅");
-      //product_list[7] = new Product("스벅 디저트 세트 기프티콘 팔아요", 7, "11500원", "동작구직거래왕7", 4.5, 4,"../productlist/image/product8.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product8.html","스벅");
-      //product_list[8] = new Product("숭실대 도보 3분 원룸 사실분", 8, "420000원", "동작구직거래왕8", 4.5, 5,"../productlist/image/product9.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product9.html","반지하풀오셥관리비별도");
-      //product_list[9] = new Product("숭대 2번 출구 1분거리 원룸 양도합니다", 9, "420000원", "동작구직거래왕9", 4.5, 5,"../productlist/image/product10.jpg","../../productdetail_page/productlist_page/productlist_with_mainframe/productdetail_pages/product10.html","보증금2000지상층풀옵션");
-      // product_list[10] = new Product("다온아토 독일군 스니커즈 265", 0, "28000원", "동작구직거래왕0", 4.5, 1,"../productlist/image/product1.jpg","새상품");
-      // product_list[11] = new Product("탑10 롱패딩 사이즈 90", 1, "20000원", "동작구직거래왕1", 3.5, 1,"../productlist/image/product2.jpg","택배비 별도");
-      // product_list[12] = new Product("GSAT 책 팝니다", 2, "21000원", "동작구직거래왕2", 4.0, 2,"../productlist/image/product3.jpg","숭실대입구 직거래");
-      // product_list[13] = new Product("컴사 책 팝니다(로봇그림)", 3, "9000원", "동작구직거래왕3", 3.5, 2,"../productlist/image/product4.jpg","택배거래X");
-      // product_list[14] = new Product("애플팬슬 1세대 + 정품가죽케이스", 4, "70000원",  "동작구직거래왕4", 5.0, 3,"../productlist/image/product5.jpg","택배비포함");
-      // product_list[15] = new Product("아이폰 11 64기가 화이트 액정 교체받은 외관 s급 기기", 5, "600000원", "동작구직거래왕5", 4.5, 3,"../productlist/image/product6.jpg","학교근처직거래");
-      // product_list[16] = new Product("스벅 카페모카 기프티콘 팔아요", 6, "4000원", "동작구직거래왕6", 4.5, 4,"../productlist/image/product7.jpg","스벅");
-      // product_list[17] = new Product("스벅 디저트 세트 기프티콘 팔아요", 7, "11500원", "동작구직거래왕7", 4.5, 4,"../productlist/image/product8.jpg","스벅");
-      // product_list[18] = new Product("숭실대 도보 3분 원룸 사실분", 8, "420000원", "동작구직거래왕8", 4.5, 5,"../productlist/image/product9.jpg","반지하풀오셥관리비별도");
-      // product_list[19] = new Product("숭대 2번 출구 1분거리 원룸 양도합니다", 9, "420000원", "동작구직거래왕9", 4.5, 5,"../productlist/image/product10.jpg","보증금2000지상층풀옵션");
-
+      
       function CheckOnlyOne(chk){
           var obj = document.getElementsByName("chck");
           for(var i=0; i<obj.length; i++){
@@ -106,44 +84,42 @@
         <a onclick="Catefunc1()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate1">Clothes<i class="fa fa-caret-down"></i>
           </a>
           <div id="InnerCate1" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
-            <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">전체</a>
-            <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">상의</a>
+            <a href="./productlist_for_clothes.html" class="j-bar-item j-button j-text-grey j-light-grey">전체</a>
+            <a href="./productlist_for_top.html" class="j-bar-item j-button j-text-grey j-light-grey">상의</a>
             <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">하의</a>
-            <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">아우터</a>
-            <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">신발</a>
+            <a href="./productlist_for_shose.html" class="j-bar-item j-button j-text-grey j-light-grey">신발</a>
             <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
           </div>
      <!-- sidebar inner container -->
      <a onclick="Catefunc2()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate2">Books<i class="fa fa-caret-down"></i>
      </a>
      <div id="InnerCate2" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
-       <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">전공</a>
+       <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">전공</a>
        <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">소설</a>
        <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">자기개발</a>
-       <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+       <a href="./productlist_for_Book4.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
      </div>
     <!-- sidebar inner container -->
     <a onclick="Catefunc3()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate3">전자기기<i class="fa fa-caret-down"></i>
     </a>
     <div id="InnerCate3" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
-      <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">휴대폰</a>
+      <a href="./productlist_for_Phone.html" class="j-bar-item j-button j-text-grey j-light-grey">휴대폰</a>
       <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">가전기기</a>
-      <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+      <a href="./productlist_for_etc.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
     </div>
     <!-- sidebar inner container -->
     <a onclick="Catefunc4()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate4">쿠폰/기프티콘<i class="fa fa-caret-down"></i>
     </a>
     <div id="InnerCate4" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
       <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">음식</a>
-      <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">음료</a>
-      <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">전자기기</a>
+      <a href="./productlist_for_drink.html" class="j-bar-item j-button j-text-grey j-light-grey">음료</a>
       <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">문화상품권</a>
     </div>
     <!-- sidebar inner container -->
     <a onclick="Catefunc5()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate5">집<i class="fa fa-caret-down"></i>
     </a>
     <div id="InnerCate5" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
-      <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">원룸</a>
+      <a href="./productlist_for_oneroom.html" class="j-bar-item j-button j-text-grey j-light-grey">원룸</a>
       <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">투룸</a>
       <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">하숙</a>
       <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
@@ -269,6 +245,7 @@
           var item_count =Object.keys(data).length;
           var innerHTML="";
           for(var i=0; i < item_count; i++){
+            if(data[i].category == 2 && data[i].detail_category == 1){ //책이면서 전공책
             var image=data[i].image2;
             var name=data[i].p_name;
               innerHTML+='<div class="box">';
@@ -303,7 +280,8 @@
               innerHTML+=            data[i].hashtag;
               innerHTML+='    </p>';
               innerHTML+='</div>';
-        }
+            }
+          }
         $('.productlist_wrap').append(innerHTML);
         });
       </script>
