@@ -4,7 +4,6 @@
     <title>제품 리스트</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" href="/j.css"> -->
     <link rel="stylesheet" href="css/j.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
@@ -14,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+
 
 
     <!-- for productlist HC -->
@@ -28,13 +27,24 @@
 
     <link rel="stylesheet" href="../productlist/css/productlist_grid.css">
     <link rel="stylesheet" href="../productlist/css/productlist.css">
-    <!-- <link rel="stylesheet" type="text/css" href="/productlist_grid.css">
-    <link rel="stylesheet" type="text/css" href="/productlist.css"> -->
     <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
 
     <script>
+      class Product{
+          constructor(p_name, p_id, p_price, seller, seller_score, category, image, product_page, hashtag){
+              this.p_name = p_name;
+              this.p_id = p_id;
+              this.p_price = p_price;
+              this.seller = seller;
+              this.seller_score = seller_score;
+              this.category = category;
+              this.image = image;
+              this.product_page = product_page;
+              this.hashtag = hashtag;
+          }                            
+      } 
       
-      function CheckOnlyOne(chk){
+       function CheckOnlyOne(chk){
           var obj = document.getElementsByName("chck");
           for(var i=0; i<obj.length; i++){
               if(obj[i] != chk){
@@ -42,56 +52,6 @@
               }
           }
       }
-
-      function update_productlist(P_category){
-          $('.productlist_wrap').empty();
-          $.getJSON('../../product.json',function(data){
-            console.log(data);
-            var item_count =Object.keys(data).length;
-            var innerHTML="";
-            for(var i=0; i < item_count; i++){
-              if(data[i].category == P_category ){
-                var image=data[i].image2;
-                var name=data[i].p_name;
-                  innerHTML+='<div class="box">';
-                  innerHTML+='    <div class="product_image">';
-                  innerHTML+='        <img src=';
-                  innerHTML+=            data[i].image2;
-                  innerHTML+='        >';
-                  innerHTML+="    </div>";
-                  innerHTML+='    <div class="product_info">';
-                  innerHTML+='        <a href=';
-                  innerHTML+=             data[i].product_page2;
-                  innerHTML+='        >';
-                  innerHTML+='          <span class="product_title">';
-                  innerHTML+=               data[i].p_name;
-                  innerHTML+='          </span>';
-                  innerHTML+='        </a>';
-                  innerHTML+="    </div>"   ;    
-                  innerHTML+='    <div class="seller-info">';
-                  innerHTML+='        <span class="seller-name">';
-                  innerHTML+=             data[i].seller;
-                  innerHTML+='        </span>';
-                  innerHTML+='        <span class="seller-score">';
-                  innerHTML+='           판매자 평점:';
-                  innerHTML+=             data[i].seller_score;
-                  innerHTML+='        </span>';
-                  innerHTML+='    </div>';
-                  innerHTML+='    <p class="product_price">';
-                  innerHTML+=         data[i].p_price;
-                  innerHTML+='    </p>';
-                  innerHTML+='    <p class="product_hashtag">';
-                  innerHTML+='        #';
-                  innerHTML+=            data[i].hashtag;
-                  innerHTML+='    </p>';
-                  innerHTML+='</div>';
-              }
-            }
-            $('.productlist_wrap').append(innerHTML);
-          });
-      }
-
-      
     </script>
     <!------------------------------------------------------------------------------------------------------------------- -->
 
@@ -105,12 +65,10 @@
     <header class="j-header j-bar j-top j-white j-large j-center" style="z-index:1;border-bottom:1px solid #ccc;width:82%;">
       <a href="../../main/project.html"class="j-round-large j-bar-item j-button j-left j-margin-top j-padding-16 js-margin-right"><b>SSU-MARKET</b></a>
       <input class="j-round-large j-bar-item j-input searchbar-border j-padding-16 j-margin-left j-margin-bottom j-margin-top"style="width:60%" type="text" placeholder="필요한 물품을 검색해보세요!" >
-      <!-- <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" 
-      onclick="location.href='j-bar-item ../productlist_page/productlist_with_mainframe/productlist_with_mainframe.html'"><i class="fa fa-search j-hover-opacity j-large"></i></button>  -->
       <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" 
-      onclick="location.href='#'"><i class="fa fa-search j-hover-opacity j-large"></i></button>  
-      <h5 class="j-round-large j-button j-margin-top j-margin-left j-left j-padding-16"><a href="../../login/login.html" onclick="window.open('../../login/login.html','name','resizable=no width=500 height=700 left=700');return false"><b>로그인</b></a></h5>
-        <h5 class="j-round-large j-button j-margin-top j-margin-left j-left j-padding-16"><a href="../../login/signup.html" onclick="window.open('../../login/signup.html','name','resizable=no width=500 height=700 left=700');return false"><b>회원가입</b></a></h5>
+      onclick="location.href='./productlist_with_mainframe.html'"><i class="fa fa-search j-hover-opacity j-large"></i></button> 
+      <h5 class="j-round-large j-button j-margin-top j-margin-left j-left j-padding-16"><a href="../../login/login.html" onclick="window.open('../login/login.html','name','resizable=no width=500 height=700 left=700');return false"><b>로그인</b></a></h5>
+        <h5 class="j-round-large j-button j-margin-top j-margin-left j-left j-padding-16"><a href="../../login/signup.html" onclick="window.open('../login/signup.html','name','resizable=no width=500 height=700 left=700');return false"><b>회원가입</b></a></h5>
     </header>
     <!-- Sidebar/menu -->
         
@@ -139,7 +97,7 @@
        <a href="./productlist_for_Book1.html" class="j-bar-item j-button j-text-grey j-light-grey">전공</a>
        <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">소설</a>
        <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">자기개발</a>
-       <a href="./productlist_for_Book1.htm4" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+       <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
      </div>
     <!-- sidebar inner container -->
     <a onclick="Catefunc3()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate3">전자기기<i class="fa fa-caret-down"></i>
@@ -155,6 +113,7 @@
     <div id="InnerCate4" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
       <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">음식</a>
       <a href="./productlist_for_drink.html" class="j-bar-item j-button j-text-grey j-light-grey">음료</a>
+      <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">전자기기</a>
       <a href="./error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">문화상품권</a>
     </div>
     <!-- sidebar inner container -->
@@ -242,84 +201,94 @@
                     $('.btn').click(function () {
                         var new_product = $('#productlist_wrap');
                         if($("input:checkbox[value=clothing]").is(":checked") == true){
-                            alert('의류로 업데이트'); 
-                            update_productlist(1); 
-                            // location.reload();                                        
+                            alert('검색 기능에서 사용 가능한 기능입니다.');        
+                            location.reload();                                        
                         }
                         else if($("input:checkbox[value=book]").is(":checked") == true){
-                            alert('도서로 업데이트');
-                            update_productlist(2);                                                
+                            alert('검색 기능에서 사용 가능한 기능입니다.');
+                            location.reload();                                                
                         }
                         else if($("input:checkbox[value=electronics]").is(":checked") == true){
-                            alert('전자기기로 업데이트');
-                            update_productlist(3);                                                
+                            alert('검색 기능에서 사용 가능한 기능입니다.');
+                            location.reload();                                                
                         }
                         else if($("input:checkbox[value=coupon]").is(":checked") == true){
-                            alert('쿠폰/기프티콘으로 업데이트');
-                            update_productlist(4);                                                
+                            alert('검색 기능에서 사용 가능한 기능입니다.');
+                            location.reload();                                                
                         }
                         else if($("input:checkbox[value=oneroom]").is(":checked") == true){
-                            alert('원룸으로 업데이트');
-                            update_productlist(5);                                                
+                            alert('검색 기능에서 사용 가능한 기능입니다.');
+                            location.reload();                                                
                         }
                         else{
-                            alert('하나의 항목을 선택해야 합니다.');
+                            alert('검색 기능에서 사용 가능한 기능입니다.');
                         }       
                     });
                 });
             </script>
         </div>
     </section>
-
+    
+    <!-- // var cate;
+    // $.getJSON('/category_button.json', function(data){
+    //   console.log(data);
+    //   var a = data["button"];
+    //   console.log(a);
+      
+    //   //cate = data[button]
+    // }); -->
     <section class="productlist_wrap" id="productlist_wrap">
         
-        <script>
-            
-          $.getJSON('/product.json',function(data){
-            console.log(data);
-            var item_count =Object.keys(data).length;
-            var innerHTML="";
-            for(var i=0; i < item_count; i++){
-              var image=data[i].image2;
-              var name=data[i].p_name;
-                innerHTML+='<div class="box">';
-                innerHTML+='    <div class="product_image">';
-                innerHTML+='        <img src=';
-                innerHTML+=            data[i].image2;
-                innerHTML+='        >';
-                innerHTML+="    </div>";
-                innerHTML+='    <div class="product_info">';
-                innerHTML+='        <a href=';
-                innerHTML+=             data[i].product_page2;
-                innerHTML+='        >';
-                innerHTML+='          <span class="product_title">';
-                innerHTML+=               data[i].p_name;
-                innerHTML+='          </span>';
-                innerHTML+='        </a>';
-                innerHTML+="    </div>"   ;    
-                innerHTML+='    <div class="seller-info">';
-                innerHTML+='        <span class="seller-name">';
-                innerHTML+=             data[i].seller;
-                innerHTML+='        </span>';
-                innerHTML+='        <span class="seller-score">';
-                innerHTML+='           판매자 평점:';
-                innerHTML+=             data[i].seller_score;
-                innerHTML+='        </span>';
-                innerHTML+='    </div>';
-                innerHTML+='    <p class="product_price">';
-                innerHTML+=         data[i].p_price;
-                innerHTML+='    </p>';
-                innerHTML+='    <p class="product_hashtag">';
-                innerHTML+='        #';
-                innerHTML+=            data[i].hashtag;
-                innerHTML+='    </p>';
-                innerHTML+='</div>';
+      <script>
+        // 카테고리 : 1(의류) 2(책) 3(전자기기) 4(쿠폰/기프티콘) 5(원룸)  
+        $.getJSON('/product.json',function(data){
+          console.log(data);
+          var item_count =Object.keys(data).length;
+          var innerHTML="";
+          for(var i=0; i < item_count; i++){
+            if(data[i].category == 2 && data[i].detail_category == 4){
+            var image=data[i].image2;
+            var name=data[i].p_name;
+              innerHTML+='<div class="box">';
+              innerHTML+='    <div class="product_image">';
+              innerHTML+='        <img src=';
+              innerHTML+=            data[i].image2;
+              innerHTML+='        >';
+              innerHTML+="    </div>";
+              innerHTML+='    <div class="product_info">';
+              innerHTML+='        <a href=';
+              innerHTML+=             data[i].product_page2;
+              innerHTML+='        >';
+              innerHTML+='          <span class="product_title">';
+              innerHTML+=               data[i].p_name;
+              innerHTML+='          </span>';
+              innerHTML+='        </a>';
+              innerHTML+="    </div>"   ;    
+              innerHTML+='    <div class="seller-info">';
+              innerHTML+='        <span class="seller-name">';
+              innerHTML+=             data[i].seller;
+              innerHTML+='        </span>';
+              innerHTML+='        <span class="seller-score">';
+              innerHTML+='           판매자 평점:';
+              innerHTML+=             data[i].seller_score;
+              innerHTML+='        </span>';
+              innerHTML+='    </div>';
+              innerHTML+='    <p class="product_price">';
+              innerHTML+=         data[i].p_price;
+              innerHTML+='    </p>';
+              innerHTML+='    <p class="product_hashtag">';
+              innerHTML+='        #';
+              innerHTML+=            data[i].hashtag;
+              innerHTML+='    </p>';
+              innerHTML+='</div>';
+            }
           }
-          $('.productlist_wrap').append(innerHTML);
-          });
-        </script>
+        $('.productlist_wrap').append(innerHTML);
+        });
+      </script>
 
-    </section>
+  </section>
+  
     
   </section>
   <!-- </div> -->
