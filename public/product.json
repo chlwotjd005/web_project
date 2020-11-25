@@ -1,0 +1,137 @@
+{
+   "0": 
+   {
+    "p_name": "다온아토 독일군 스니커즈 265",
+    "p_id":0,
+    "p_price":"28000원",
+    "seller":"동작구직거래왕0",
+    "seller_score":4.5,
+    "p_content":"한번도 안신은 새 신발",
+    "category":1,
+    "image":"/image/product1.jpg",
+    "image2":"/image/product1.jpg",
+    "product_page":"/productdetail_page/productdetail_pages/product1.html",
+    "product_page2":"/productdetail_page/productdetail_pages/product1.html",
+    "hashtag":"새상품"
+    },
+    "1":
+    {
+    "p_name":"탑10 롱패딩 사이즈 90",
+    "p_id":1, 
+    "p_price":"20000원", 
+    "seller":"동작구직거래왕1",
+    "seller_score":3.5, 
+    "p_content":"따뜻합니다",
+    "category":1,
+    "image":"../images/product2.jpg",
+    "image2":"../productlist/image/product2.jpg",
+    "product_page":"product2.html",
+    "product_page2":"../../productdetail_page/productdetail_pages/product2.html",
+    "hashtag":"택배비 별도"
+    },
+    "2":{
+    "p_name":"GSAT 책 팝니다",
+    "p_id": 2,
+    "p_price": "21000원",
+    "seller": "동작구직거래왕2",
+    "seller_score": 4.0,
+    "category": 2,
+    "image":"../images/product3.jpg",
+    "image2":"../productlist/image/product3.jpg",
+    "product_page":"product3.html",
+    "product_page2":"../../productdetail_page/productdetail_pages/product3.html",
+    "hashtag":"숭실대입구 직거래"
+    },
+    "3":{
+      "p_name":"컴사 책 팝니다(로봇그림)",
+      "p_id": 3,
+      "p_price": "9000원",
+      "seller": "동작구직거래왕3",
+      "seller_score": 3.5,
+      "category": 2,
+      "image":"../images/product4.jpg",
+      "image2":"../productlist/image/product4.jpg",
+      "product_page":"product4.html",
+      "product_page2":"../../productdetail_page/productdetail_pages/product4.html",
+      "hashtag":"택배거래X"
+    },
+    "4":{
+      "p_name":"애플팬슬 1세대 + 정품가죽케이스",
+      "p_id": 4,
+      "p_price": "70000원",
+      "seller": "동작구직거래왕4",
+      "seller_score": 5.0,
+      "category": 3,
+      "image":"../images/product5.jpg",
+      "image2":"../productlist/image/product5.jpg",
+      "product_page":"product5.html",
+      "product_page2":"../../productdetail_page/productdetail_pages/product5.html",
+      "hashtag":"택배비미포함"
+    },
+    "5":{
+      "p_name":"아이폰 11 64기가 화이트 액정 교체받은 외관 s급 기기",
+      "p_id": 5,
+      "p_price": "600000원",
+      "seller": "동작구직거래왕5",
+      "seller_score": 4.5,
+      "category": 3,
+      "image":"../images/product6.jpg",
+      "image2":"../productlist/image/product6.jpg",
+      "product_page":"product6.html",
+      "product_page2":"../../productdetail_page/productdetail_pages/product6.html",
+      "hashtag":"학교근처 직거래"
+    },
+    "6":{
+      "p_name":"스벅 카페모카 기프티콘 팔아요",
+      "p_id": 6,
+      "p_price": "4000원",
+      "seller": "동작구직거래왕6",
+      "seller_score": 4.5,
+      "category": 4,
+      "image":"../images/product7.jpg",
+      "image2":"../productlist/image/product7.jpg",
+      "product_page":"product7.html",
+      "product_page2":"../../productdetail_page/productdetail_pages/product7.html",
+      "hashtag":"아메리카노"
+    },
+    "7":{
+      "p_name":"스벅 디저트 세트 기프티콘 팔아요",
+      "p_id": 7,
+      "p_price": "11500원",
+      "seller": "동작구직거래왕7",
+      "seller_score": 4.5,
+      "category": 4,
+      "image":"../images/product8.jpg",
+      "image2":"../productlist/image/product8.jpg",
+      "product_page":"product8.html",
+      "product_page2":"../../productdetail_page/productdetail_pages/product8.html",
+      "hashtag":"맛있음 보장"
+    },
+    "8":{
+      "p_name":"숭실대 도보 3분 원룸 사실분",
+      "p_id": 8,
+      "p_price": "420000원",
+      "seller": "동작구직거래왕8",
+      "seller_score": 4.5,
+      "category": 5,
+      "image":"../images/product9.jpg",
+      "image2":"../productlist/image/product9.jpg",
+      "product_page":"product9.html",
+      "product_page2":"../../productdetail_page/productdetail_pages/product9.html",
+      "hashtag":"반지하풀오셥관리비별도"
+    },
+    "9":{
+      "p_name":"숭대 2번 출구 1분거리 원룸 양도합니다",
+      "p_id": 9,
+      "p_price": "420000원",
+      "seller": "동작구직거래왕9",
+      "seller_score": 4.7,
+      "category": 5,
+      "image":"../images/product10.jpg",
+      "image2":"../productlist/image/product10.jpg",
+      "product_page":"product10.html",
+      "product_page2":"../../productdetail_page/productdetail_pages/product10.html",
+      "hashtag":"보증금2000지상층풀옵션"
+    }
+    
+}

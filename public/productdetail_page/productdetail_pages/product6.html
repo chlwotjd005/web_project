@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>제품 리스트</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/j.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- for productdetailpage -->
+    <link rel="stylesheet" href="../css/productdetail.css">
+
+
+    <!-- for productlist HC -->
+    <!-------------------------------------------------------------------------------------------------------------->
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/productlist_grid.css">
+    <link rel="stylesheet" href="../css/productlist.css">
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+
+    <script>
+      class Product{
+          constructor(p_name, p_id, p_price, seller, seller_score, category, image, product_page, hashtag){
+              this.p_name = p_name;
+              this.p_id = p_id;
+              this.p_price = p_price;
+              this.seller = seller;
+              this.seller_score = seller_score;
+              this.category = category;
+              this.image = image;
+              this.product_page = product_page;
+              this.hashtag = hashtag;
+          }                            
+      } 
+      // 카테고리 : 1(의류) 2(책) 3(전자기기) 4(쿠폰/기프티콘) 5(원룸)
+      var product_list = new Array();                                                
+      product_list[0] = new Product("다온아토 독일군 스니커즈 265", 0, "28000원", "동작구직거래왕0", 4.5, 1,"../images/product1.jpg","product1.html","새상품");
+      product_list[1] = new Product("탑10 롱패딩 사이즈 90", 1, "20000원", "동작구직거래왕1", 3.5, 1,"../images/product2.jpg","product2.html","택배비 별도");
+      product_list[2] = new Product("GSAT 책 팝니다", 2, "21000원", "동작구직거래왕2", 4.0, 2,"../images/product3.jpg","product3.html","숭실대입구 직거래");
+      product_list[3] = new Product("컴사 책 팝니다(로봇그림)", 3, "9000원", "동작구직거래왕3", 3.5, 2,"../images/product4.jpg","product4.html","택배거래X");
+      product_list[4] = new Product("애플팬슬 1세대 + 정품가죽케이스", 4, "70000원",  "동작구직거래왕4", 5.0, 3,"../images/product5.jpg","product5.html","택배비포함");
+      product_list[5] = new Product("아이폰 11 64기가 화이트 액정 교체받은 외관 s급 기기", 5, "600000원", "동작구직거래왕5", 4.5, 3,"../images/product6.jpg","product6.html","학교근처직거래");
+      product_list[6] = new Product("스벅 카페모카 기프티콘 팔아요", 6, "4000원", "동작구직거래왕6", 4.5, 4,"../images/product7.jpg","product7.html","스벅");
+      product_list[7] = new Product("스벅 디저트 세트 기프티콘 팔아요", 7, "11500원", "동작구직거래왕7", 4.5, 4,"../images/product8.jpg","product8.html","스벅");
+      product_list[8] = new Product("숭실대 도보 3분 원룸 사실분", 8, "420000원", "동작구직거래왕8", 4.5, 5,"../images/product9.jpg","product9.html","반지하풀오셥관리비별도");
+      product_list[9] = new Product("숭대 2번 출구 1분거리 원룸 양도합니다", 9, "420000원", "동작구직거래왕9", 4.5, 5,"../images/product10.jpg","product10.html","보증금2000지상층풀옵션");
+      // product_list[10] = new Product("다온아토 독일군 스니커즈 265", 0, "28000원", "동작구직거래왕0", 4.5, 1,"../productlist/image/product1.jpg","새상품");
+      // product_list[11] = new Product("탑10 롱패딩 사이즈 90", 1, "20000원", "동작구직거래왕1", 3.5, 1,"../productlist/image/product2.jpg","택배비 별도");
+      // product_list[12] = new Product("GSAT 책 팝니다", 2, "21000원", "동작구직거래왕2", 4.0, 2,"../productlist/image/product3.jpg","숭실대입구 직거래");
+      // product_list[13] = new Product("컴사 책 팝니다(로봇그림)", 3, "9000원", "동작구직거래왕3", 3.5, 2,"../productlist/image/product4.jpg","택배거래X");
+      // product_list[14] = new Product("애플팬슬 1세대 + 정품가죽케이스", 4, "70000원",  "동작구직거래왕4", 5.0, 3,"../productlist/image/product5.jpg","택배비포함");
+      // product_list[15] = new Product("아이폰 11 64기가 화이트 액정 교체받은 외관 s급 기기", 5, "600000원", "동작구직거래왕5", 4.5, 3,"../productlist/image/product6.jpg","학교근처직거래");
+      // product_list[16] = new Product("스벅 카페모카 기프티콘 팔아요", 6, "4000원", "동작구직거래왕6", 4.5, 4,"../productlist/image/product7.jpg","스벅");
+      // product_list[17] = new Product("스벅 디저트 세트 기프티콘 팔아요", 7, "11500원", "동작구직거래왕7", 4.5, 4,"../productlist/image/product8.jpg","스벅");
+      // product_list[18] = new Product("숭실대 도보 3분 원룸 사실분", 8, "420000원", "동작구직거래왕8", 4.5, 5,"../productlist/image/product9.jpg","반지하풀오셥관리비별도");
+      // product_list[19] = new Product("숭대 2번 출구 1분거리 원룸 양도합니다", 9, "420000원", "동작구직거래왕9", 4.5, 5,"../productlist/image/product10.jpg","보증금2000지상층풀옵션");
+
+      function CheckOnlyOne(chk){
+          var obj = document.getElementsByName("chck");
+          for(var i=0; i<obj.length; i++){
+              if(obj[i] != chk){
+              obj[i].checked = false;
+              }
+          }
+      }
+    </script>
+    <!------------------------------------------------------------------------------------------------------------------- -->
+
+    <style>
+    .j-sidebar a {font-family: "Roboto", sans-serif}
+    body,h1,h2,h3,h4,h5,h6,.j-wide {font-family: "Montserrat", sans-serif;}
+    </style>
+    <body class="j-content" style="max-width:1400px">
+
+      <!-- Top header -->
+        <header class="j-bar j-collapse j-top j-white j-large j-center" style="z-index:1;border-bottom:1px solid #ccc;width:90%;">
+            <a href="../../main/project.html"class="j-button j-margin-left j-left j-padding-32 js-margin-right"><b>SSU-MARKET</b></a>
+            <input class="j-round-large j-bar-item j-input searchbar-border j-padding-16 j-margin-left j-margin-bottom j-margin-top"style="width:60%" type="text" placeholder="필요한 물품을 검색해보세요!" >
+            <!-- <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" ><i class="fa fa-search j-hover-opacity j-large"></i></button>  -->
+            <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" 
+              onclick="location.href='../../productlist_page/productlist_with_mainframe/productlist_with_mainframe.html'"><i class="fa fa-search j-hover-opacity j-large"></i></button> 
+              <h5 class="j-round-large j-button j-margin-top j-margin-left j-left j-padding-16"><a href="../../login/login.html" onclick="window.open('../../login/login.html','name','resizable=no width=500 height=700 left=700');return false"><b>로그인</b></a></h5>
+              <h5 class="j-round-large j-button j-margin-top j-margin-left j-left j-padding-16"><a href="../../login/signup.html" onclick="window.open('../../login/signup.html','name','resizable=no width=500 height=700 left=700');return false"><b>회원가입</b></a></h5>
+          </header>
+    <!-- Sidebar/menu -->
+        
+    <nav class="j-sidebar j-bar-block j-white j-collapse j-top" style="z-index:3;width:250px" id="mySidebar">
+      <div class="j-container j-display-container j-padding-16">
+        <i onclick="j_close()" class="fa fa-remove j-hide-large j-button j-display-topright"></i>
+      
+      </div>
+    
+      <div class="j-large" style="font-weight:bold">
+        <a class="j-bar-item j-text-black j-light-grey j-block j-white j-left-align"style="font-weight:bold">CATEGORY</a>
+        <!-- sidebar inner container -->
+        <a onclick="Catefunc1()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate1">Clothes<i class="fa fa-caret-down"></i>
+          </a>
+          <div id="InnerCate1" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+            <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">상의</a>
+            <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">하의</a>
+            <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">아우터</a>
+            <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">신발</a>
+            <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+          </div>
+     <!-- sidebar inner container -->
+     <a onclick="Catefunc2()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate2">Books<i class="fa fa-caret-down"></i>
+     </a>
+     <div id="InnerCate2" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+       <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">전공</a>
+       <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">소설</a>
+       <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">자기개발</a>
+       <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+     </div>
+    <!-- sidebar inner container -->
+    <a onclick="Catefunc3()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate3">전자기기<i class="fa fa-caret-down"></i>
+    </a>
+    <div id="InnerCate3" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+      <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">휴대폰</a>
+      <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">가전기기</a>
+      <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+    </div>
+    <!-- sidebar inner container -->
+    <a onclick="Catefunc4()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate4">쿠폰/기프티콘<i class="fa fa-caret-down"></i>
+    </a>
+    <div id="InnerCate4" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+      <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">음식</a>
+      <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">음료</a>
+      <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">전자기기</a>
+      <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">문화상품권</a>
+    </div>
+    <!-- sidebar inner container -->
+    <a onclick="Catefunc5()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate5">집<i class="fa fa-caret-down"></i>
+    </a>
+    <div id="InnerCate5" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+      <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">원룸</a>
+      <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">투룸</a>
+      <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">하숙</a>
+      <a href="../../productlist_page/productlist_with_mainframe/error_page.html" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+    </div>
+
+
+      </div>
+    </nav>
+  </head>
+<!-- Top menu on small screens -->
+<header class="j-bar j-top j-hide-large j-black j-xlarge">
+  <div class="j-bar-item j-padding-24 j-right"style="width:15%;">SSU-M</div>
+  <a href="javascript:void(0)" class="j-bar-item j-button j-padding-24 j-left"style="width:10%;" onclick="j_open()"><i class="fa fa-bars"></i></a>  
+  <input class="j-round-large j-bar-item j-input searchbar-border j-padding-16 j-margin-left j-margin-bottom j-margin-top"style="width:60%" type="text" placeholder="필요한 물품을 검색해보세요!" >
+    <button type="button" class="j-round-large j-bar-item j-button j-black j-padding-16 j-margin-bottom j-margin-top"style="width:5%" ><i class="fa fa-search j-hover-opacity j-large"></i></button>
+          <!-- style="width:95%" -->
+
+    
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="j-overlay j-hide-large" onclick="j_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="j-main" style="margin-left:250px;margin-top: 100px;">
+
+  <!-- Push down content on small screens -->
+  <div class="j-hide-large" style="margin-top:83px"></div>
+  
+
+  <!-- 본인이 만든 페이지 -->
+  <section id="thema_container">
+    <section id="selection_bar">
+        <div class = "wrap_checkbox">
+            <div class="image">
+              <div id="product_image">
+                상품 이미지
+              </div>
+        </div>
+        <div class="contents">
+            <!-- revise by HC -->
+            <h3 id = "product_name">상품이름</h1>
+            
+            <p class="price" id="productprice"><b>상품가격</b></p>
+            <p><b id="sellername">판매자 닉네임</b></p>
+            <p id="sellerscore">신뢰도</p>
+
+            <p>상품설명</p>
+            
+            <button class="button">구매하기</button>
+        </div>
+
+        <!---------------------------------------------------------------------->
+        <!-- added by HC -->
+        <script>
+          document.getElementById('product_image').innerHTML="<img src='" + product_list[5].image + "''>";
+          document.getElementById('product_name').innerHTML=product_list[5].p_name;
+          document.getElementById('productprice').innerHTML=product_list[5].p_price;
+          document.getElementById('sellername').innerHTML=product_list[5].seller;
+          document.getElementById('sellerscore').innerHTML=product_list[5].seller_score;
+          // document.getElementById('image_1').innerHTML="<img src=" + product_list[0].image + " />";
+        </script>
+        <!---------------------------------------------------------------------->
+        
+        </div>
+      
+    </section>
+
+    <section id="productlist_wrap">
+        <h2>관련 상품</h2><br><br>
+        <script>
+            for(var i=0; i < product_list.length; i++){
+              if(0!=i&&product_list[0].category==product_list[i].category){
+                document.write('<div class="box">');
+                document.write('    <div class="product_image">');
+                document.write('        <img src=');
+                document.write(             product_list[i].image);
+                document.write('        >');
+                document.write("    </div>");
+                document.write('    <div class="product_info">');
+                document.write('        <a href=');
+                document.write(             product_list[i].product_page);
+                document.write('        >');
+                document.write('          <span class="product_title">');
+                document.write(               product_list[i].p_name);
+                document.write('          </span>');
+                document.write('        </a>');
+                document.write("    </div>");       
+                document.write('    <div class="seller-info">');
+                document.write('        <span class="seller-name">');
+                document.write(             product_list[i].seller);
+                document.write('        </span>');
+                document.write('        <span class="seller-score">');
+                document.write('           판매자 평점:');
+                document.write(             product_list[i].seller_score);
+                document.write('        </span>');
+                document.write('    </div>');
+                document.write('    <p class="product_price">');
+                document.write(         product_list[i].p_price);
+                document.write('    </p>');
+                document.write('    <p class="product_hashtag">');
+                document.write('        #');document.write(product_list[i].hashtag);
+                document.write('    </p>');
+                document.write('</div>');
+            }
+          }
+        </script>
+
+    </section>
+    
+  </section>
+ 
+  <!-- Footer
+  <footer class="j-padding-64 j-light-grey j-small j-center"style="margin-top:200px" id="footer">
+    
+    <div class="j-row-padding">
+      <div class="j-col s4 ">
+        <h4>Store</h4>
+        <p><i class="fa fa-fw fa-map-marker"></i> Company Name</p>
+        <p><i class="fa fa-fw fa-phone"></i> 0044123123</p>
+        <p><i class="fa fa-fw fa-envelope"></i> ex@mail.com</p>
+      </div>
+      <div class="j-col s4 j-justify">
+        <h4>Payment method</h4>
+        <p><i class="fa fa-fw fa-cc-amex"></i> Amex</p>
+        <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
+        
+      </div>
+      <div class="j-col s4 j-justify">
+        <h4>Contect</h4>
+        <i class="fa fa-facebook-official j-hover-opacity j-large"></i>
+        <i class="fa fa-instagram j-hover-opacity j-large"></i>
+        <i class="fa fa-snapchat j-hover-opacity j-large"></i>
+        <i class="fa fa-pinterest-p j-hover-opacity j-large"></i>
+        <i class="fa fa-twitter j-hover-opacity j-large"></i>
+        <i class="fa fa-linkedin j-hover-opacity j-large"></i>
+      </div>
+    </div>
+  </footer> -->
+
+
+  <!-- End page content -->
+</div>
+
+
+<script>
+// Accordion 
+function Catefunc1() {
+  var x = document.getElementById("InnerCate1");
+  if (x.className.indexOf("j-show") == -1) {
+    x.className += " j-show";
+  } else {
+    x.className = x.className.replace(" j-show", "");
+  }
+}
+
+function Catefunc2() {
+  var x = document.getElementById("InnerCate2");
+  if (x.className.indexOf("j-show") == -1) {
+    x.className += " j-show";
+  } else {
+    x.className = x.className.replace(" j-show", "");
+  }
+}
+function Catefunc3() {
+  var x = document.getElementById("InnerCate3");
+  if (x.className.indexOf("j-show") == -1) {
+    x.className += " j-show";
+  } else {
+    x.className = x.className.replace(" j-show", "");
+  }
+}
+function Catefunc4() {
+  var x = document.getElementById("InnerCate4");
+  if (x.className.indexOf("j-show") == -1) {
+    x.className += " j-show";
+  } else {
+    x.className = x.className.replace(" j-show", "");
+  }
+}
+function Catefunc5() {
+  var x = document.getElementById("InnerCate5");
+  if (x.className.indexOf("j-show") == -1) {
+    x.className += " j-show";
+  } else {
+    x.className = x.className.replace(" j-show", "");
+  }
+}
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+document.getElementById("Cate1").click();
+
+
+// Open and close sidebar
+function j_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function j_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login_Page</title>
+</head>
+<body>
+    SSU-MARKET LOGIN PAGE!<br>
+    ID : <input type="text" placeholder="ID 입력" id="userid"><br>
+    PW : <input type="password" placeholder="PASSWORD 입력" id="userpw"><br>
+    <input type="button" value="로그인" id="signinbutton">
+</body>
+<script type="text/javascript">
+    console.log("LOGIN PAGE");
+    console.log(document);
+
+    var signinbutton = document.getElementById("signinbutton")
+    signinbutton.addEventListener('click', signinFunc)
+
+    function signinFunc(){
+        var userid = document.getElementById("userid").value;
+        var userpw = document.getElementById("userpw").value;
+
+        if(userid == "chltjdwns77" && userpw == "1234"){
+            alert("로그인 성공");
+            console.log("로그인 성공했습니다.");
+        }
+        else{
+            alert("로그인 실패");
+            console.log("로그인 실패했습니다.");
+        }
+        
+        }
+</script>
+</html>
