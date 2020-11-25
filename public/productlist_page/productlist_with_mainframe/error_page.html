@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>준비중입니다</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/j.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+    <!-- for productlist HC -->
+    <!-------------------------------------------------------------------------------------------------------------->
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../productlist/css/productlist_grid.css">
+    <link rel="stylesheet" href="../productlist/css/productlist.css">
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+
+    <script>
+      
+      function CheckOnlyOne(chk){
+          var obj = document.getElementsByName("chck");
+          for(var i=0; i<obj.length; i++){
+              if(obj[i] != chk){
+              obj[i].checked = false;
+              }
+          }
+      }
+    </script>
+    <!------------------------------------------------------------------------------------------------------------------- -->
+
+    <style>
+    .j-sidebar a {font-family: "Roboto", sans-serif}
+    body,h1,h2,h3,h4,h5,h6,.j-wide {font-family: "Montserrat", sans-serif;}
+    </style>
+    <body class="j-content" style="max-width:1400px">
+
+      <!-- Top header -->
+        <header class="j-bar j-collapse j-top j-white j-large j-center" style="z-index:1;border-bottom:1px solid #ccc;width:90%;">
+            <a href="../../main/project.html"class="j-button j-margin-left j-left j-padding-32 js-margin-right"><b>SSU-MARKET</b></a>
+            <input class="j-round-large j-bar-item j-input searchbar-border j-padding-16 j-margin-left j-margin-bottom j-margin-top"style="width:60%" type="text" placeholder="필요한 물품을 검색해보세요!" >
+            <!-- <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" ><i class="fa fa-search j-hover-opacity j-large"></i></button>  -->
+            <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" 
+              onclick="location.href='../productlist_with_mainframe/productlist_with_mainframe.html'"><i class="fa fa-search j-hover-opacity j-large"></i></button> 
+            <h4 class="j-round-large j-button j-margin-left j-left j-padding-16"><b>로그인</b> </h4>
+            <h4 class="j-round-large j-button j-margin-left j-left j-padding-16"><b>회원가입</b> </h4>
+          </header>
+    <!-- Sidebar/menu -->
+        
+    <nav class="j-sidebar j-bar-block j-white j-collapse j-top" style="z-index:3;width:250px" id="mySidebar">
+      <div class="j-container j-display-container j-padding-16">
+        <i onclick="w3_close()" class="fa fa-remove j-hide-large j-button j-display-topright"></i>
+      
+      </div>
+    
+      <div class="j-large" style="font-weight:bold">
+        <a class="j-bar-item j-text-black j-light-grey j-block j-white j-left-align"style="font-weight:bold">CATEGORY</a>
+        <!-- sidebar inner container -->
+        <a onclick="Catefunc1()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate1">Clothes<i class="fa fa-caret-down"></i>
+          </a>
+          <div id="InnerCate1" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+            <a href="./productlist_for_category.html" class="j-bar-item j-button j-text-grey j-light-grey">전체</a>
+            <a href="./productlist_for_category.html" class="j-bar-item j-button j-text-grey j-light-grey">상의</a>
+            <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">하의</a>
+            <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">아우터</a>
+            <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">신발</a>
+            <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+          </div>
+     <!-- sidebar inner container -->
+     <a onclick="Catefunc2()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate2">Books<i class="fa fa-caret-down"></i>
+     </a>
+     <div id="InnerCate2" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+       <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">전공</a>
+       <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">소설</a>
+       <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">자기개발</a>
+       <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+     </div>
+    <!-- sidebar inner container -->
+    <a onclick="Catefunc3()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate3">전자기기<i class="fa fa-caret-down"></i>
+    </a>
+    <div id="InnerCate3" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+      <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">휴대폰</a>
+      <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">가전기기</a>
+      <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+    </div>
+    <!-- sidebar inner container -->
+    <a onclick="Catefunc4()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate4">쿠폰/기프티콘<i class="fa fa-caret-down"></i>
+    </a>
+    <div id="InnerCate4" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+      <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">음식</a>
+      <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">음료</a>
+      <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">전자기기</a>
+      <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">문화상품권</a>
+    </div>
+    <!-- sidebar inner container -->
+    <a onclick="Catefunc5()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate5">집<i class="fa fa-caret-down"></i>
+    </a>
+    <div id="InnerCate5" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+      <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">원룸</a>
+      <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">투룸</a>
+      <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">하숙</a>
+      <a href="#" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+    </div>
+
+
+      </div>
+    </nav>
+  </head>
+<!-- Top menu on small screens -->
+<header class="j-bar j-top j-hide-large j-black j-xlarge">
+  <div class="j-bar-item j-padding-24 j-right"style="width:15%;">SSU-M</div>
+  <a href="javascript:void(0)" class="j-bar-item j-button j-padding-24 j-left"style="width:10%;" onclick="w3_open()"><i class="fa fa-bars"></i></a>  
+  <input class="j-round-large j-bar-item j-input searchbar-border j-padding-16 j-margin-left j-margin-bottom j-margin-top"style="width:60%" type="text" placeholder="필요한 물품을 검색해보세요!" >
+    <button type="button" class="j-round-large j-bar-item j-button j-black j-padding-16 j-margin-bottom j-margin-top"style="width:5%" ><i class="fa fa-search j-hover-opacity j-large"></i></button>
+          <!-- style="width:95%" -->
+
+    
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="j-overlay j-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="j-main" style="margin-left:250px;margin-top: 100px;">
+
+  <!-- Push down content on small screens -->
+  <div class="j-hide-large" style="margin-top:83px"></div>
+  
+
+  <!------------------------------------------------------------------------------------------------------------------------->
+  <!-- productlist by HC -->
+  <!-- <div class ="jumbotron text-center"> -->
+  <section id="thema_container">
+    <img src="../productlist/image/404page.jpg" class="mx-auto d-block" style="width:50%">
+    <div class="container p-3 my-3 bg-primary text-white">
+        <h1>준비중입니다. 이용해주셔서 감사합니다.</h1>
+    </div>
+      
+  </section>
+  <!-- </div> -->
+  
+  </div>
+  <!-- Footer -->
+  
+  <!-- </footer>  -->
+
+
+
+  <!-- End page content -->
+</div>
+
+
+<script>
+// Accordion 
+function Catefunc1() {
+  var x = document.getElementById("InnerCate1");
+  if (x.className.indexOf("j-show") == -1) {
+    x.className += " j-show";
+  } else {
+    x.className = x.className.replace(" j-show", "");
+  }
+}
+
+function Catefunc2() {
+  var x = document.getElementById("InnerCate2");
+  if (x.className.indexOf("j-show") == -1) {
+    x.className += " j-show";
+  } else {
+    x.className = x.className.replace(" j-show", "");
+  }
+}
+function Catefunc3() {
+  var x = document.getElementById("InnerCate3");
+  if (x.className.indexOf("j-show") == -1) {
+    x.className += " j-show";
+  } else {
+    x.className = x.className.replace(" j-show", "");
+  }
+}
+function Catefunc4() {
+  var x = document.getElementById("InnerCate4");
+  if (x.className.indexOf("j-show") == -1) {
+    x.className += " j-show";
+  } else {
+    x.className = x.className.replace(" j-show", "");
+  }
+}
+function Catefunc5() {
+  var x = document.getElementById("InnerCate5");
+  if (x.className.indexOf("j-show") == -1) {
+    x.className += " j-show";
+  } else {
+    x.className = x.className.replace(" j-show", "");
+  }
+}
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+document.getElementById("Cate1").click();
+
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>
