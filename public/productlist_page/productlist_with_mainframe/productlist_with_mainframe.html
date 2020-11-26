@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>제품 리스트</title>
+    <title>검색화면</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" href="/j.css"> -->
@@ -43,14 +43,21 @@
           }
       }
 
+      // 체크박스 체크 항목에 따른 업데이트 함수 
       function update_productlist(P_category){
           $('.productlist_wrap').empty();
+
+          var input = document.getElementById("search_input").value; //검색어 
+          console.log(input);
+
           $.getJSON('../../product.json',function(data){
             console.log(data);
             var item_count =Object.keys(data).length;
             var innerHTML="";
             for(var i=0; i < item_count; i++){
-              if(data[i].category == P_category ){
+              var keyword = data[i].p_name;
+              console.log(keyword);
+              if((data[i].category == P_category) && (keyword.indexOf(input) != -1) ){
                 var image=data[i].image2;
                 var name=data[i].p_name;
                   innerHTML+='<div class="box">';
@@ -91,6 +98,68 @@
           });
       }
 
+
+
+      $(document).ready(function () {
+        $('.search_button').click(function () {
+          view_search();
+        });
+      });
+
+      //검색어에 따른 상품 리스트 업데이트 항목 
+      function view_search(){
+          $('.productlist_wrap').empty();
+      
+          var input = document.getElementById("search_input").value; //검색어 
+          console.log(input);
+      
+          $.getJSON('/product.json', function(data){
+            console.log(data);
+            var innerHTML="";
+            var item_count =Object.keys(data).length;
+                  for(var i=0; i < item_count; i++){
+                    var keyword = data[i].p_name;
+                    console.log(keyword);
+                    if(keyword.indexOf(input) != -1){
+                    var image=data[i].image2;
+                    var name=data[i].p_name;
+                      innerHTML+='<div class="box">';
+                      innerHTML+='    <div class="product_image">';
+                      innerHTML+='        <img src=';
+                      innerHTML+=            data[i].image2;
+                      innerHTML+='        >';
+                      innerHTML+="    </div>";
+                      innerHTML+='    <div class="product_info">';
+                      innerHTML+='        <a href=';
+                      innerHTML+=             data[i].product_page2;
+                      innerHTML+='        >';
+                      innerHTML+='          <span class="product_title">';
+                      innerHTML+=               data[i].p_name;
+                      innerHTML+='          </span>';
+                      innerHTML+='        </a>';
+                      innerHTML+="    </div>"   ;    
+                      innerHTML+='    <div class="seller-info">';
+                      innerHTML+='        <span class="seller-name">';
+                      innerHTML+=             data[i].seller;
+                      innerHTML+='        </span>';
+                      innerHTML+='        <span class="seller-score">';
+                      innerHTML+='           판매자 평점:';
+                      innerHTML+=             data[i].seller_score;
+                      innerHTML+='        </span>';
+                      innerHTML+='    </div>';
+                      innerHTML+='    <p class="product_price">';
+                      innerHTML+=         data[i].p_price;
+                      innerHTML+='    </p>';
+                      innerHTML+='    <p class="product_hashtag">';
+                      innerHTML+='        #';
+                      innerHTML+=            data[i].hashtag;
+                      innerHTML+='    </p>';
+                      innerHTML+='</div>';
+                    }
+                }
+                $('.productlist_wrap').append(innerHTML);
+          });
+        }
       
     </script>
     <!------------------------------------------------------------------------------------------------------------------- -->
@@ -104,11 +173,9 @@
        <!-- Top header -->
     <header class="j-header j-bar j-top j-white j-large j-center" style="z-index:1;border-bottom:1px solid #ccc;width:82%;">
       <a href="../../main/project.html"class="j-round-large j-bar-item j-button j-left j-margin-top j-padding-16 js-margin-right"><b>SSU-MARKET</b></a>
-      <input class="j-round-large j-bar-item j-input searchbar-border j-padding-16 j-margin-left j-margin-bottom j-margin-top"style="width:60%" type="text" placeholder="필요한 물품을 검색해보세요!" >
-      <!-- <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" 
-      onclick="location.href='j-bar-item ../productlist_page/productlist_with_mainframe/productlist_with_mainframe.html'"><i class="fa fa-search j-hover-opacity j-large"></i></button>  -->
-      <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" 
-      onclick="location.href='#'"><i class="fa fa-search j-hover-opacity j-large"></i></button>  
+      <input id="search_input" class="j-round-large j-bar-item j-input searchbar-border j-padding-16 j-margin-left j-margin-bottom j-margin-top"style="width:60%" type="text" placeholder="필요한 물품을 검색해보세요!" >
+      <button type="button" class="search_button j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" >
+        <i class="fa fa-search j-hover-opacity j-large"></i></button>  
       <h5 class="j-round-large j-button j-margin-top j-margin-left j-left j-padding-16"><a href="../../login/login.html" onclick="window.open('../../login/login.html','name','resizable=no width=500 height=700 left=700');return false"><b>로그인</b></a></h5>
         <h5 class="j-round-large j-button j-margin-top j-margin-left j-left j-padding-16"><a href="../../login/signup.html" onclick="window.open('../../login/signup.html','name','resizable=no width=500 height=700 left=700');return false"><b>회원가입</b></a></h5>
     </header>

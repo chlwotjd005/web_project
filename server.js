@@ -26,12 +26,11 @@ app.get('/login/login.html', function(req, res){
 });
 
 app.get('/login/signup.html', function(req, res){
-    fs.readFile('/login/signup.html', function(error, data){
+    fs.readFile('./login/signup.html', function(error, data){
         res.writeHead(200, {'Contesnt-type': 'text/html' });
         res.end(data);
     });
 });
-
 
 app.get('/productlist_page/productlist_with_mainframe/productlist_for_clothes.html', function(req, res){
     fs.readFile('./productlist_page/productlist_with_mainframe/productlist_for_clothes.html', function(error, data){
