@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>제품 리스트</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="/j.css"> -->
+    <link rel="stylesheet" href="/css/j.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+
+
+    <!-- for productlist HC -->
+    <!-------------------------------------------------------------------------------------------------------------->
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/productlist_grid.css">
+    <link rel="stylesheet" href="/css/productlist.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/productlist_grid.css">
+    <link rel="stylesheet" type="text/css" href="/productlist.css"> -->
+    <script src="http://code.jquery.com/jquery-3.1.1.js"></script>
+    <script src="/javascript/main.js"></script>
+    <script src="/javascript/productdetail.js"></script>
+    <script src="/javascript/productlist.js"></script>
+
+
+
+    
+    <!------------------------------------------------------------------------------------------------------------------- -->
+
+    <style>
+    .j-sidebar a {font-family: "Roboto", sans-serif}
+    body,h1,h2,h3,h4,h5,h6,.j-wide {font-family: "Montserrat", sans-serif;}
+    </style>
+    <body class="j-content" style="max-width:1400px">
+
+       <!-- Top header -->
+    <header class="j-header j-bar j-top j-white j-large j-center" style="z-index:1;border-bottom:1px solid #ccc;width:82%;">
+      <a href="/index"class="j-round-large j-bar-item j-button j-left j-margin-top j-padding-16 js-margin-right"><b>SSU-MARKET</b></a>
+      <input id ="search_input" class="j-round-large j-bar-item j-input searchbar-border j-padding-16 j-margin-left j-margin-bottom j-margin-top"style="width:60%" type="text" placeholder="필요한 물품을 검색해보세요!" >
+      <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" 
+      onclick="location.href='/productlist/search/'+ document.getElementById('search_input').value"><i class="fa fa-search j-hover-opacity j-large"></i></button>   
+      <h6 class="j-round-large j-button j-margin-top j-margin-left j-left j-padding-16"><a href="../../login/login.html" onclick="window.open('../../login/login.html','name','resizable=no width=500 height=700 left=700');return false"><b>로그인</b></a></h5>
+      <h6 class="j-round-large j-button j-margin-top j-margin-left j-left j-padding-16"><a href="../../login/signup.html" onclick="window.open('../../login/signup.html','name','resizable=no width=500 height=700 left=700');return false"><b>회원가입</b></a></h5>
+    </header>
+    <!-- Sidebar/menu -->
+    
+    
+    <nav class="j-sidebar j-bar-block j-white j-collapse j-top" style="z-index:3;width:250px" id="mySidebar">
+      <div class="j-container j-display-container j-padding-16">
+        <i onclick="j_close()" class="fa fa-remove j-hide-large j-button j-display-topright"></i>
+      
+      </div>
+    
+      <div class="j-large" style="font-weight:bold">
+        <a class="j-bar-item j-text-black j-light-grey j-block j-white j-left-align"style="font-weight:bold">CATEGORY</a>
+        <!-- sidebar inner container -->
+        <a href="/productlist" class="j-bar-item j-text-grey j-button j-block j-white j-left-align">전체</a>
+        <a onclick="Catefunc1()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate1">Clothes<i class="fa fa-caret-down"></i>
+          </a>
+          <div id="InnerCate1" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+            <!-- <a href="../productlist_page/productlist_with_mainframe/productlist_with_mainframe copy.ejs" class="j-bar-item j-button j-text-grey j-light-grey">전체</a> -->
+            <a href="/productlist_cg/1" class="j-bar-item j-button j-text-grey j-light-grey">상의</a>
+            <a href="/productlist_cg/2" class="j-bar-item j-button j-text-grey j-light-grey">하의</a>
+            <a href="/productlist_cg/3" class="j-bar-item j-button j-text-grey j-light-grey">아우터</a>
+            <a href="/productlist_cg/4" class="j-bar-item j-button j-text-grey j-light-grey">신발</a>
+            <a href="/productlist_cg/5" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+    
+          </div>
+     <!-- sidebar inner container -->
+     <a onclick="Catefunc2()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate2">Books<i class="fa fa-caret-down"></i>
+     </a>
+     <div id="InnerCate2" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+       <a href="/productlist_cg/6" class="j-bar-item j-button j-text-grey j-light-grey">전공</a>
+       <a href="/productlist_cg/7" class="j-bar-item j-button j-text-grey j-light-grey">소설</a>
+       <a href="/productlist_cg/8" class="j-bar-item j-button j-text-grey j-light-grey">자기개발</a>
+       <a href="/productlist_cg/9" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+     </div>
+    <!-- sidebar inner container -->
+    <a onclick="Catefunc3()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate3">전자기기<i class="fa fa-caret-down"></i>
+    </a>
+    <div id="InnerCate3" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+      <a href="/productlist_cg/10" class="j-bar-item j-button j-text-grey j-light-grey">휴대폰</a>
+      <a href="/productlist_cg/11" class="j-bar-item j-button j-text-grey j-light-grey">가전기기</a>
+      <a href="/productlist_cg/12" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+    </div>
+    <!-- sidebar inner container -->
+    <a onclick="Catefunc4()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate4">쿠폰/기프티콘<i class="fa fa-caret-down"></i>
+    </a>
+    <div id="InnerCate4" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+      <a href="/productlist_cg/13" class="j-bar-item j-button j-text-grey j-light-grey">음식</a>
+      <a href="/productlist_cg/14" class="j-bar-item j-button j-text-grey j-light-grey">음료</a>
+      <a href="/productlist_cg/15" class="j-bar-item j-button j-text-grey j-light-grey">문화상품권</a>
+    </div>
+    <!-- sidebar inner container -->
+    <a onclick="Catefunc5()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate5">집<i class="fa fa-caret-down"></i>
+    </a>
+    <div id="InnerCate5" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+      <a href="/productlist_cg/16" class="j-bar-item j-button j-text-grey j-light-grey">원룸</a>
+      <a href="/productlist_cg/17" class="j-bar-item j-button j-text-grey j-light-grey">투룸</a>
+      <a href="/productlist_cg/18" class="j-bar-item j-button j-text-grey j-light-grey">하숙</a>
+      <a href="/productlist_cg/19" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+    </div>
+    
+    
+      </div>
+    </nav>
+  </head>
+<!-- Top menu on small screens -->
+<header class="j-bar j-top j-hide-large j-black j-xlarge">
+  <div class="j-bar-item j-padding-24 j-right"style="width:15%;">SSU-M</div>
+  <a href="javascript:void(0)" class="j-bar-item j-button j-padding-24 j-left"style="width:10%;" onclick="j_open()"><i class="fa fa-bars"></i></a>  
+  <input class="j-round-large j-bar-item j-input searchbar-border j-padding-16 j-margin-left j-margin-bottom j-margin-top"style="width:60%" type="text" placeholder="필요한 물품을 검색해보세요!" >
+    <button type="button" class="j-round-large j-bar-item j-button j-black j-padding-16 j-margin-bottom j-margin-top"style="width:5%" ><i class="fa fa-search j-hover-opacity j-large"></i></button>
+          <!-- style="width:95%" -->
+
+    
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="j-overlay j-hide-large" onclick="j_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="j-main" style="margin-left:250px;margin-top: 100px;">
+
+  <!-- Push down content on small screens -->
+  <div class="j-hide-large" style="margin-top:83px"></div>
+  
+
+  <!------------------------------------------------------------------------------------------------------------------------->
+  <!-- productlist by HC -->
+  <!-- <div class ="jumbotron text-center"> -->
+  <section id="thema_container">
+    <section id="selection_bar">
+        
+        <div class = "wrap_checkbox">
+            <input type="checkbox" name="chck" value="clothing" onclick="CheckOnlyOne(this);" class = "check_element" disabled>의류 
+            <input type="checkbox" name="chck" value="book" onclick="CheckOnlyOne(this);" class = "check_element" disabled>책 
+            <input type="checkbox" name="chck" value="electronics" onclick="CheckOnlyOne(this);" class = "check_element" disabled>전자기기
+            <input type="checkbox" name="chck" value="coupon" onclick="CheckOnlyOne(this);" class = "check_element" disabled>쿠폰/기프티콘
+            <input type="checkbox" name="chck" value="oneroom" onclick="CheckOnlyOne(this);" class = "check_element" disabled>원룸
+            
+        </div>
+        <div class = "ok_button">
+            <style>
+                .reverse {
+                    background: mediumturquoise;
+                    /* color: white; */
+                }
+            </style>
+
+            <!-- <button class="button_chk"><span>확인</span></button> -->
+            <!-- <div class="col-sm-3 text-center">
+              <button type="button" class="btn btn-primary">확인</button>
+            </div> -->
+            
+            <!-- 부트스트랩ver button -->
+            <div class="row text-center" style="width: 100%">
+              <div style="width: 30%; float:none; margin:0 auto" >
+                      <button class="btn btn-primary btn-round my-3">확인</button>
+              </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="productlist_wrap" id="productlist_wrap">
+        <% for (var i=0; i<productlist.length; i++){ %>
+          <% if(productlist[i].detail_category == detail_c){ %> 
+          <script>
+            console.log(productlist);
+          </script>
+          <div class="box">
+                <div class="product_image">
+                    <img src= <%=productlist[i].image %>>
+                </div>
+                <div class="product_title">
+                    <a href="/productdetail/<%=productlist[i].p_id%>">
+                        <p><%= productlist[i].p_name%></p>
+                    </a>
+                </div>
+                <div class="seller-info">
+                    <span class="seller-name">
+                        <p><%=productlist[i].seller%></p>
+                    </span>
+                    <span class="seller-score">
+                        <p><%=productlist[i].seller_score%></p>
+                    </span>
+                </div>
+                    <p class="product_price"><%=productlist[i].p_price%></p>
+                    <p class="product_hashtag"><%=productlist[i].hashtag%></p>
+
+            </div>
+          <% } %>
+
+        <% }%>
+    
+    </section>
+    
+  </section>
+  <!-- </div> -->
+  
+  </div>
+  <!-- Footer -->
+  
+  <!-- </footer>  -->
+
+
+
+  <!-- End page content -->
+</div>
+
+
+</body>
+</html>
