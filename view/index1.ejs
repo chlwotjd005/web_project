@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<title>SSU-Market</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/j.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script> 
+<script src="/javascript/main.js"></script>
+<script src="/javascript/productdetail.js"></script>
+<script src="/javascript/productlist.js"></script>
+
+<style>
+.j-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.j-wide {font-family: "Montserrat", sans-serif;}
+</style>
+
+<body class="j-content">
+   
+  <!-- Top header -->
+    <header class="j-header j-bar j-top j-white j-center" style="border-bottom:1px solid #ccc;width:100%;">
+        <a href="/index"class="j-round-large j-large j-bar-item j-button j-left j-margin-top j-padding-16 j-margin-left" style="margin-right:2%"><b>SSU-MARKET</b></a>
+        <input id ="search_input" class="j-round-large j-bar-item j-input searchbar-border j-padding-16 j-margin-bottom j-margin-top"style="width:60%;margin-left:5%" type="text" placeholder="필요한 물품을 검색해보세요!" >
+      <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left js-margin-top"style="width:5%;border-radius:12px" 
+      onclick="location.href='/productlist/search/'+ document.getElementById('search_input').value"><i class="fa fa-search j-hover-opacity j-large"></i></button>  
+      <h6 class="j-round-large j-button j-margin-top j-margin-left j-left j-padding-16" id="logout"><a><b>로그아웃</b></a></h6>
+    </header>
+<!-- Sidebar/menu-->
+
+<nav class="j-sidebar j-bar-block j-white j-collapse j-top " style="z-index:3;width:200px" id="mySidebar">
+  <div class="j-container j-display-container j-padding-16">
+    <i onclick="j_close()" class="fa fa-remove j-hide-large j-button j-display-topright"></i>
+   
+  </div>
+
+  <div class="j-large" style="font-weight:bold">
+    <b class="j-bar-item j-text-black j-light-grey j-white j-left-align"style="font-weight:bold">CATEGORY</b>
+    <!-- sidebar inner container -->
+    <a href="/productlist" class="j-bar-item j-text-grey j-button j-block j-white j-left-align">전체</a>
+    <a onclick="Catefunc1()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate1">Clothes<i class="fa fa-caret-down"></i>
+      </a>
+      <div id="InnerCate1" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+        <!-- <a href="../productlist_page/productlist_with_mainframe/productlist_with_mainframe copy.ejs" class="j-bar-item j-button j-text-grey j-light-grey">전체</a> -->
+        <a href="/productlist_cg/1" class="j-bar-item j-button j-text-grey j-light-grey">상의</a>
+        <a href="/productlist_cg/2" class="j-bar-item j-button j-text-grey j-light-grey">하의</a>
+        <a href="/productlist_cg/3" class="j-bar-item j-button j-text-grey j-light-grey">아우터</a>
+        <a href="/productlist_cg/4" class="j-bar-item j-button j-text-grey j-light-grey">신발</a>
+        <a href="/productlist_cg/5" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+
+      </div>
+ <!-- sidebar inner container -->
+ <a onclick="Catefunc2()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate2">Books<i class="fa fa-caret-down"></i>
+ </a>
+ <div id="InnerCate2" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+   <a href="/productlist_cg/6" class="j-bar-item j-button j-text-grey j-light-grey">전공</a>
+   <a href="/productlist_cg/7" class="j-bar-item j-button j-text-grey j-light-grey">소설</a>
+   <a href="/productlist_cg/8" class="j-bar-item j-button j-text-grey j-light-grey">자기개발</a>
+   <a href="/productlist_cg/9" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+ </div>
+<!-- sidebar inner container -->
+<a onclick="Catefunc3()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate3">전자기기<i class="fa fa-caret-down"></i>
+</a>
+<div id="InnerCate3" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+  <a href="/productlist_cg/10" class="j-bar-item j-button j-text-grey j-light-grey">휴대폰</a>
+  <a href="/productlist_cg/11" class="j-bar-item j-button j-text-grey j-light-grey">가전기기</a>
+  <a href="/productlist_cg/12" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+</div>
+<!-- sidebar inner container -->
+<a onclick="Catefunc4()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate4">쿠폰/기프티콘<i class="fa fa-caret-down"></i>
+</a>
+<div id="InnerCate4" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+  <a href="/productlist_cg/13" class="j-bar-item j-button j-text-grey j-light-grey">음식</a>
+  <a href="/productlist_cg/14" class="j-bar-item j-button j-text-grey j-light-grey">음료</a>
+  <a href="/productlist_cg/15" class="j-bar-item j-button j-text-grey j-light-grey">문화상품권</a>
+</div>
+<!-- sidebar inner container -->
+<a onclick="Catefunc5()" href="javascript:void(0)" class="j-bar-item j-text-grey j-button j-block j-white j-left-align" id="Cate5">집<i class="fa fa-caret-down"></i>
+</a>
+<div id="InnerCate5" class="j-bar-block j-text-grey j-hide j-padding-large j-medium">
+  <a href="/productlist_cg/16" class="j-bar-item j-button j-text-grey j-light-grey">원룸</a>
+  <a href="/productlist_cg/17" class="j-bar-item j-button j-text-grey j-light-grey">투룸</a>
+  <a href="/productlist_cg/18" class="j-bar-item j-button j-text-grey j-light-grey">하숙</a>
+  <a href="/productlist_cg/19" class="j-bar-item j-button j-text-grey j-light-grey">기타</a>
+</div>
+
+
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="j-smallscreenbar j-top j-hide-large j-black j-large">
+
+  
+  <a href="javascript:void(0)" class="j-round-large j-left j-bar-item j-button j-padding-16 j-margin-top j-margin-left"style="width:5%;" onclick="j_open()"><i class="fa fa-bars"></i></a>
+  <input class="j-round-large j-bar-item j-input searchbar-border j-left j-padding-16 j-margin-bottom j-margin-top j-margin-left"style="width:55%" type="text" placeholder="필요한 물품을 검색해보세요!" >  
+    <button class="j-round-large j-bar-item j-black j-button j-left j-padding-16 j-margin-bottom j-margin-top j-margin-left"style="width:4%;"onclick="location.href='/productlist/search/'+ document.getElementById('search_input').value"><i class="fa fa-search j-hover-opacity"></i></button>
+  <a href="index"class="j-round-large j-button j-right j-padding-16 j-margin-bottom j-margin-top j-margin-right" sytle = "width:10%;"><b>SSU-MARKET</b></a>  
+
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="j-overlay j-hide-large" onclick="j_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="j-main" style="margin-left:250px;max-width: 950px;">
+
+  <!-- Push down content on small screens -->
+  <div class="j-hide-large" style="margin-top:83px"></div>
+  
+
+  <!-- 본인이 만든 페이지 -->
+  <div class="j-round-large j-display-container"style="margin-left:50px; margin-top:150px">
+    <img src="/img/main1.JPG"
+              
+               sizes="100vw" style="width:100%;border-radius: 8px"
+               alt="main image1">
+  
+    <div class="j-display-bottomleft j-text-black" >
+      <p><a href="/productlist" class="j-button j-black j-padding-large j-large">바로가기</a></p>
+    </div>
+  </div>
+
+  <div class="j-round-large j-display-container"style="margin-left:50px; margin-top:50px">
+    <img src="/img/main2.JPG"
+               
+               sizes="100vw" style="width:100%;border-radius: 8px"
+               alt="main image2">
+  
+    <div class="j-display-bottomright j-text-black" >
+      <p><a href="/productlist" class="j-button j-black j-padding-large j-large">인기매물 보기</a></p>
+    </div>
+  </div>
+
+  <div class="j-round-large j-display-container"style="margin-left:50px; margin-top:50px">
+    <img src="/img/main3.jpg"
+              
+               sizes="100vw" style="width:100%;border-radius: 8px"
+               alt="main image3">
+  
+    <div class="j-display-bottomright j-text-white" >
+      <h1 class="j-hide-small">의류</h1>
+      <p><a href="/index/clothes" class="j-button j-black j-padding-large j-large"> 바로가기</a></p>
+    </div>
+  </div>
+  
+  </div>
+  <!-- Footer -->
+  <footer class="j-padding-8 j-light-grey j-small j-center"style="margin-top:400px" id="footer">
+    
+    <div class="j-row-padding">
+      <div class="j-col s4 ">
+        <h4>Store</h4>
+        <p><i class="fa fa-fw fa-map-marker"></i> SUU-MARKET</p>
+        <p><i class="fa fa-fw fa-phone"></i> 010-1234-5678</p>
+        <p><i class="fa fa-fw fa-envelope"></i> SSUM@naver.com</p>
+      </div>
+      <div class="j-col s4 j-justify">
+        <h4>Payment method</h4>
+        <p><i class="fa fa-fw fa-cc-amex"></i> 직거래</p>
+        <p><i class="fa fa-fw fa-credit-card"></i> 채팅 어플리케이션</p>
+        
+      </div>
+      <div class="j-col s4 j-justify">
+        <h4>Contect</h4>
+        <i class="fa fa-facebook-official j-hover-opacity j-large"></i>
+        <i class="fa fa-instagram j-hover-opacity j-large"></i>
+        <i class="fa fa-snapchat j-hover-opacity j-large"></i>
+        <i class="fa fa-pinterest-p j-hover-opacity j-large"></i>
+        <i class="fa fa-twitter j-hover-opacity j-large"></i>
+        <i class="fa fa-linkedin j-hover-opacity j-large"></i>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- End page content -->
+</div>
+<script>
+  $(document).ready(function(){
+      $("#logout").click(function(res){
+          $.ajax({
+              method : 'GET',
+              url : '/logout',
+              success : function(res){
+                  window.location.href = "/";
+              },
+              error : function(err){
+
+              }
+          })
+      });
+  });
+</script>
+
+
+</body>
+</html>
