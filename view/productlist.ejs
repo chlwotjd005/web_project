@@ -42,25 +42,22 @@
     .j-sidebar a {font-family: "Roboto", sans-serif}
     body,h1,h2,h3,h4,h5,h6,.j-wide {font-family: "Montserrat", sans-serif;}
     </style>
-    <body class="j-content" style="max-width:1400px">
+    <body class="j-content">
 
-       <!-- Top header -->
-    <header class="j-header j-bar j-top j-white j-large j-center" style="z-index:1;border-bottom:1px solid #ccc;width:82%;">
-      <a href="/index"class="j-round-large j-bar-item j-button j-left j-margin-top j-padding-16 js-margin-right"><b>SSU-MARKET</b></a>
-      <input id ="search_input" class="j-round-large j-bar-item j-input searchbar-border j-padding-16 j-margin-left j-margin-bottom j-margin-top"style="width:60%" type="text" placeholder="필요한 물품을 검색해보세요!" >
-      <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left j-margin-top"style="width:5%;border-radius:12px" 
-      onclick="location.href='/productlist/search/'+ document.getElementById('search_input').value"><i class="fa fa-search j-hover-opacity j-large"></i></button> 
-      <h6 class="j-round-large j-button j-margin-top j-margin-left j-left j-padding-16"><a href="../../login/login.html" onclick="window.open('../../login/login.html','name','resizable=no width=500 height=700 left=700');return false"><b>로그인</b></a></h5>
-      <h6 class="j-round-large j-button j-margin-top j-margin-left j-left j-padding-16"><a href="../../login/signup.html" onclick="window.open('../../login/signup.html','name','resizable=no width=500 height=700 left=700');return false"><b>회원가입</b></a></h5>
+  <!-- Top header -->
+    <header class="j-header j-bar j-top j-white j-center" style="border-bottom:1px solid #ccc;width:100%;">
+        <a href="/index"class="j-round-large j-large j-bar-item j-button j-left j-margin-top j-padding-16 j-margin-left" style="margin-right:2%"><b>SSU-MARKET</b></a>
+        <input id ="search_input" class="j-round-large j-bar-item j-input searchbar-border j-padding-16 j-margin-bottom j-margin-top"style="width:60%;margin-left:5%" type="text" placeholder="필요한 물품을 검색해보세요!" >
+      <button type="button" class="j-bar-item j-button j-white j-center j-padding-16 j-margin-bottom j-margin-left js-margin-top"style="width:5%;border-radius:12px" 
+      onclick="location.href='/productlist/search/'+ document.getElementById('search_input').value"><i class="fa fa-search j-hover-opacity j-large"></i></button>  
     </header>
-    <!-- Sidebar/menu -->
-    
-    
-    <nav class="j-sidebar j-bar-block j-white j-collapse j-top" style="z-index:3;width:250px" id="mySidebar">
-      <div class="j-container j-display-container j-padding-16">
-        <i onclick="j_close()" class="fa fa-remove j-hide-large j-button j-display-topright"></i>
-      
-      </div>
+<!-- Sidebar/menu-->
+
+<nav class="j-sidebar j-bar-block j-white j-collapse j-top " style="z-index:3;width:200px" id="mySidebar">
+  <div class="j-container j-display-container j-padding-16">
+    <i onclick="j_close()" class="fa fa-remove j-hide-large j-button j-display-topright"></i>
+   
+  </div>
     
       <div class="j-large" style="font-weight:bold">
         <a class="j-bar-item j-text-black j-light-grey j-block j-white j-left-align"style="font-weight:bold">CATEGORY</a>
@@ -117,16 +114,15 @@
     </nav>
   </head>
 <!-- Top menu on small screens -->
-<header class="j-bar j-top j-hide-large j-black j-xlarge">
-  <div class="j-bar-item j-padding-24 j-right"style="width:15%;">SSU-M</div>
-  <a href="javascript:void(0)" class="j-bar-item j-button j-padding-24 j-left"style="width:10%;" onclick="j_open()"><i class="fa fa-bars"></i></a>  
-  <input class="j-round-large j-bar-item j-input searchbar-border j-padding-16 j-margin-left j-margin-bottom j-margin-top"style="width:60%" type="text" placeholder="필요한 물품을 검색해보세요!" >
-    <button type="button" class="j-round-large j-bar-item j-button j-black j-padding-16 j-margin-bottom j-margin-top"style="width:5%" ><i class="fa fa-search j-hover-opacity j-large"></i></button>
-          <!-- style="width:95%" -->
+<header class="j-smallscreenbar j-top j-hide-large j-black j-large">
 
-    
+  
+  <a href="javascript:void(0)" class="j-round-large j-left j-bar-item j-button j-padding-16 j-margin-top j-margin-left"style="width:5%;" onclick="j_open()"><i class="fa fa-bars"></i></a>
+  <input class="j-round-large j-bar-item j-input searchbar-border j-left j-padding-16 j-margin-bottom j-margin-top j-margin-left"style="width:55%" type="text" placeholder="필요한 물품을 검색해보세요!" >  
+    <button class="j-round-large j-bar-item j-black j-button j-left j-padding-16 j-margin-bottom j-margin-top j-margin-left"style="width:4%;"onclick="location.href='/productlist/search/'+ document.getElementById('search_input').value"><i class="fa fa-search j-hover-opacity"></i></button>
+  <a href="index"class="j-round-large j-button j-right j-padding-16 j-margin-bottom j-margin-top j-margin-right" sytle = "width:10%;"><b>SSU-MARKET</b></a>  
+
 </header>
-
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="j-overlay j-hide-large" onclick="j_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
@@ -181,7 +177,7 @@
                     <img src= <%=productlist[i].image %>>
                 </div>
                 <div class="product_title">
-                    <a href="productdetail/<%=productlist[i].p_id%>">
+                    <a href="/productdetail/<%=productlist[i].p_id%>">
                         <p><%= productlist[i].p_name%></p>
                     </a>
                 </div>
@@ -190,7 +186,7 @@
                         <p><%=productlist[i].seller%></p>
                     </span>
                     <span class="seller-score">
-                        <p><%=productlist[i].seller_score%></p>
+                        <p>판매자 평점 : <%=productlist[i].seller_score%></p>
                     </span>
                 </div>
                     <p class="product_price"><%=productlist[i].p_price%></p>
