@@ -569,6 +569,16 @@ app.get('/view/login/signup.ejs', function(req, res){
     });
 });
 
+// app.get("/productdetail/:p_id",function(req, res, next){
+//   for(var i=0; i<productlist.length; i++){
+//     if(productlist[i].p_id==req.params.p_id){
+//       req.session.current_url="/productdetail/"+ req.params.p_id;
+//       return res.render("productdetail.ejs",{productlist:productlist[i],product:productlist});
+//     }   
+//   }
+//     res.redirect("/");
+// });
+
 app.get("/productdetail/:p_id",function(req, res, next){
   for(var i=0; i<productlist.length; i++){
     if(productlist[i].p_id==req.params.p_id){
